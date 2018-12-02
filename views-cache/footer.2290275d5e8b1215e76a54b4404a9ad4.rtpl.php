@@ -1,2 +1,78 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?>	</body>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><div id="footer"><div class="content"><style>
+.footer a 	{text-decoration:none; font-size:95%; line-height:180%; color:#aba9a9}
+.footer a:hover	{text-decoration:none; color:#e2e2e2}
+.footer h3  {color:#e8eaeb; font-size:103%; line-height:160%; font-weight:400;}
+.footer h6	{color:#aba9a9; font-size: 95%; line-height:160%; font-weight:400;}
+</style>
+<div class="home">
+	<div class="container">
+		<footer class="footer">
+			<div>
+				<div class="col-4">
+					<h3>Prefeitura</h3>
+					<h6><i class="fa fa-map-marker mr10"></i>Rua Gonçalves Dias, 400 – Centro</h6>
+					<h6><i class="fa fa-map-marker mr10"></i>Rondon do Pará, PA</h6>
+					<h6><i class="fa fa-phone mr10"></i>Tel: (94) 3326-1394</h6>
+					<h6>Expediente das 07:30 às 13:30</h6>
+				</div>
+
+				<div class="col-4">
+					<h3>SIC Físico</h3>
+					<h6>Renata Ricelly N. de Andrade
+					<h6><i class="fa fa-map-marker mr10"></i>Rua Gonçalves Dias, 400 – Centro
+					<h6><i class="fa fa-map-marker mr10"></i>Rondon do Pará, PA
+					<h6><i class="fa fa-phone mr10"></i>(94) 99124 3941
+					<h6>ouvidoria@rondondopara.pa.gov.br
+					<h6>Expediente das 07:30 às 13:30
+				</div>
+
+			   	<div class="col-4">
+			    	<h3>Redes Sociaís</h3>
+					<div><a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook mr10"></i>Facebook</a></div>
+					<div><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter mr10"></i>Twitter</a></div>
+					<div><a target="_blank" href="https://facebook.com/"><i class="fa fa-youtube mr10"></i>Youtube</a></div>
+					<div><a target="_blank" href="https://instagram.com/"><i class="fa fa-instagram mr10"></i>Instagram</a></div>
+					<br>
+			   	</div>
+
+			   	<div class="col-4">
+			    	<h3>Acessos</h3>
+					<div><a href="https://www.rondondopara.pa.gov.br/adm"><i class="fa fa-cog mr10"></i>Admin</a></div>
+					<div><a target="_blank" href="https://www.rondondopara.pa.gov.br/webmail"><i class="fa fa-instagram mr10"></i>Webmail</a></div>
+					<br>
+			   		<!--<a target="_blank" href="https://www.facebook.com/pmsfx/"><img src="res/site/imagens/facebook.png"></a>-->
+			   	</div>
+			</div>	
+		</footer>
+	</div>
+</div></div></div>
+		<div id="copyright"><div class="content"><style>
+.copyright h3:before 	{font-family:fontawesome; font-size:85%; content:"\f046"; padding-right: 5px;}
+.copyright a			{text-decoration:none; font-size:92%; color:#8c8b8b;}
+.copyright a:hover		{text-decoration:none; color:#fff; cursor:pointer;}
+.copyright h6  			{color:#8c8b8b; font-size:90%; font-weight:600; padding-top:7px}
+.creditos	{float:right}
+.copyright .col-2 {margin-bottom:10px;}
+@media screen and 	(max-width:580px){.creditos{float:none}}
+/*.copyright a:before 	{font-family:fontawesome; content:"\f105"; padding-right: 5px;}*/
+</style>
+<div class="copyright container">
+	<div class="col-2">
+		<h6>PM Rondon do Pará © All Rights&nbsp;&nbsp;&nbsp;</h6>
+	</div>
+	<div class="col-2">	
+		<h6><a class="creditos" target="_blank" href="http://www.jpweb.com.br/">Desenvolvido por JP WEB</a></h6>
+	</div>
+</div></div></div>
+	</div>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37072106-1', 'auto');
+ga('send', 'pageview');
+</script>
+</body>
 </html>

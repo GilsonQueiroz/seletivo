@@ -1,0 +1,94 @@
+/* menu, font size e color, padding */
+nav 				{background:transparent; float:right; font-size:90%; height:56px; text-decoration:none; position:absolute; z-index:999;} /*bg*/
+nav > ul > li > a 	{color:#fff; padding:23px 12px; font-size:100%; letter-spacing:1px; font-weight:400; text-decoration:none;} /* fonte menu */
+nav > ul > li:hover > a, nav ul li.active a {color:#fff;} /* font menu hover*/
+nav > ul > li:hover {background:#0b6091; -webkit-transition:background .3s ease;-ms-transition:background .3s ease; transition:background .3s ease;}
+
+/* menu + e -*/
+nav > ul > li.has-sub > a {padding-right:30px}
+nav > ul > li.has-sub > a:after {/*+*/background:#fff; top:27px; right:11px; width:8px; height:2px; position:absolute; display:block; content:''}
+nav > ul > li.has-sub > a:before{/*+*/background:#fff; top:24px; right:14px; width:2px; height:8px; position:absolute; display:block; content:'';-webkit-transition:all .25s ease;-ms-transition:all .25s ease;transition:all .25s ease}
+nav > ul > li.has-sub:hover > a:before {top:23px; height:0}
+
+/* menu divisor */
+nav > ul > li 		{float:left; border-left:1px solid #46331a; border-right:0px solid #140c00;} /* borda left/hight */
+nav > ul > li:last-child {border-right:0px solid #46331a}
+nav li:hover > ul 	{left:auto}
+
+/* submenu bg, height e linha horizontal */
+nav li:hover > ul > li {height:38px}
+nav ul ul 			{position:absolute; left:-9999px}
+nav ul ul li 		{background:#0b6091; height:0; border-top:1px solid #2f78a1; border-bottom:1px solid #0a3c5a; -webkit-transition:all .25s ease; -ms-transition:all .25s ease; transition:all .25s ease}
+nav ul ul li:hover 	{background:#28739e}
+nav ul ul li a 		{font-size:103%; color:#fff; font-weight:400; padding:12px 0 12px 10px; width:190px; text-decoration:none; border-bottom:0px solid #fff;}
+nav ul ul li:hover > a,nav ul ul li a:hover {color:#fff;}
+nav ul ul li:last-child > a,nav ul ul li.last-item > a {border-bottom:0}
+
+/* sub submenu */
+nav ul ul ul 		{margin-left:100%;top:0}
+nav ul ul ul li.active a{border-left:1px solid #333}
+nav ul ul li a i 	{color:#fff; font-size:15px} /* icones */
+
+/* menu + e -*/
+nav > ul > ul > li.has-sub > a {padding-right:30px}
+nav > ul > ul > li.has-sub > a:after {/*+*/background:#fff; top:27px; right:11px; width:8px; height:2px; position:absolute; display:block; content:''}
+nav > ul > ul > li.has-sub > a:before{/*+*/background:#fff; top:24px; right:14px; width:2px; height:8px; position:absolute; display:block; content:'';-webkit-transition:all .25s ease;-ms-transition:all .25s ease;transition:all .25s ease}
+nav > ul > ul > li.has-sub:hover > a:before {top:23px; height:0}
+
+/* config */
+nav, nav ul, nav ul li, nav ul li a, nav #head-mobile {border:0; list-style:none; line-height:1; display:block; position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+nav:after, nav > ul:after{content:"."; display:block; clear:both; visibility:hidden; line-height:0; height:0}
+nav #head-mobile	{display:none}
+
+/* ------------ queries ----------------------- */
+@media screen and (max-width:980px){
+
+/* menu */	
+nav 				{width:100%; background:transparent; position:absolute; z-index:9;} /* bg geral */
+nav ul 				{width:100%; background:#0b6091; display:none}
+nav ul li 			{width:100%; border-bottom:1px solid #0a3c5a; border-top:1px solid #2f78a1;} /* linhas hor */
+nav ul li:hover 	{background:rgba(255,255,255,0.08);}
+nav > ul > li:hover > a, nav ul li.active a {color:#fff;}
+
+/* submenu */	
+nav ul ul li 		{background:#1377b1; border-bottom:1px solid #134966; border-top:1px solid #3f90bf;} /* bg do sub submenu e linha hor */
+nav ul ul li:hover 	{background:#135e88}  /* hover submenu */
+nav .submenu-button	{border-left:1px solid #434f57; height:40px; width:46px; right:0; top:0; position:absolute; z-index:99; display:block; cursor:pointer} /* borda vertical*/
+nav .submenu-button.submenu-opened {background:#1377b1}
+nav ul ul .submenu-button {height:40px;width:46px}
+
+/* submenu sub */	
+nav ul ul ul li a 	{padding-left:35px}
+nav ul ul ul li a:hover	{color:#fff; background:none;} /* fonte submenu */
+nav ul ul li:hover > a,nav ul ul li.active > a {color:#fff;}
+
+nav ul ul, nav ul ul ul{position:relative;left:0;width:100%;margin:0;text-align:left}
+nav > ul > li.has-sub > a:after, nav > ul > li.has-sub > a:before,
+nav ul ul > li.has-sub > a:after,nav ul ul > li.has-sub > a:before{display:none}
+
+nav ul ul li, nav li:hover > ul > li {height:auto}
+nav ul li a, nav ul ul li a {width:100%; font-size:14px; color:#fff; padding:13px; border-bottom:0}
+nav > ul > li 		{float:none; border-left:0 solid #e4e6ea; border-right:0 solid #e4e6ea;}
+nav ul ul li a 		{padding-left:25px; color:#fff;}
+nav ul ul li a i 	{color:#fff; font-size:15px}
+
+nav #head-mobile 	{display:block; background:transparent; padding:23px;} /* bg navbar */ /* bg menu*/
+.button 			{width:55px; height:46px; position:absolute; left:0px; top:0; cursor:pointer; z-index:999999; float:right;} /* toggle */
+.button:after 		{height:12px; width:25px; top:22px; left:20px; border-top:4px solid #fff; border-bottom:4px solid #fff; position:absolute; display:block; content:''}  /* toggle */
+.button:before 		{height:4px; width:25px; top:14px; left:20px; background:#fff; position:absolute; display:block; content:''}  /* toggle */
+.button.menu-opened:after {height:12px; width:25px; top:22px; left:20px; border-top:4px solid #fff; border-bottom:4px solid #fff; position:absolute; display:block; content:''} /* toggle */
+.button.menu-opened:before{height:4px; width:25px; top:14px; left:20px; background:#fff; position:absolute; display:block; content:''} /* toggle */
+
+nav .submenu-button:after {position:absolute; top:22px; right:19px; width:8px; height:2px; display:block; background:#fff; content:''}
+nav .submenu-button:before {position:absolute; top:19px; right:22px; display:block; width:2px; height:8px; background:#fff;content:''}
+nav .submenu-button.submenu-opened:after {background:#fff}
+nav .submenu-button.submenu-opened:before {display:none}
+nav ul ul .submenu-button:after {top:20px; right:17px}
+nav ul ul .submenu-button:before {top:17px;right:20px}
+
+@media screen and (max-width:980px){
+	.button{margin-top:-55px;} 
+	nav{margin-top:58px;} 
+	nav #head-mobile{padding:0;}}
+}
+
