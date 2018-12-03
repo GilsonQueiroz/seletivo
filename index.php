@@ -1,10 +1,12 @@
-<?php 
+<?php
 
+session_start(); 
 require_once("vendor/autoload.php");
 
 use \Slim\Slim;
 use \Hcode\Page;
 use \Hcode\PageAdmin;
+use \Hcode\Model\User;
 
 $app = new Slim();
 
@@ -16,20 +18,101 @@ $app->get('/', function() {
 
 	$page->setTpl("index");
 
-	#$sql = new Hcode\DB\SqL();
-
-	#$results = $sql->select("SELECT * FROM tb_permissions");
-
-	#echo json_encode($results);
-
 });
 
 $app->get('/admin', function() {
     
+	User::verifylogin();
+
 	$page = new PageAdmin();
 
 	$page->setTpl("index");
 
+});
+
+$app->get('/admin/login', function() {
+    
+	$page = new PageAdmin([
+		"header"=>false,
+		"footer"=>false
+	]);
+
+	$page->setTpl("login");
+
+});
+
+$app->post('/admin/login', function() {
+    
+	User::login($_POST["login"], $_POST["password"]);
+
+	header("Location: /admin");
+	exit;
+
+});
+
+
+$app->get('/admin/logout', function(){
+
+	User::logout();
+
+	header("Location: /admin");
+	exit;
+
+});
+
+$app->get('/admin/users', function() {
+    
+	User::verifylogin();
+
+	$users = User::listAll();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("users", array(
+		"users"=>$users
+	));
+
+});
+
+$app->get('/admin/users/create', function() {
+    
+	User::verifylogin();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("users-create");
+
+});
+
+$app->get('/admin/users/:iduser/delete', function($iduser) {
+    
+	User::verifylogin();
+	
+});
+
+$app->get('/admin/users/:iduser', function($iduser) {
+    
+	User::verifylogin();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("users-update");
+
+});
+
+$app->post('/admin/users/create', function() {
+    
+	User::verifylogin();
+
+	var_dump($_POST);
+	
+});
+
+$app->post('/admin/users/:iduser', function($iduser) {
+    
+	User::verifylogin();
+
+	
 });
 
 $app->run();
