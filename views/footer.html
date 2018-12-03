@@ -17,30 +17,22 @@
 				</div>
 
 				<div class="col-4">
-					<h3>SIC Físico</h3>
-					<h6>Renata Ricelly N. de Andrade
+					<h3>Comissão de processo seletivo</h3>
+					<h6>Gilson Tavares Queiroz
 					<h6><i class="fa fa-map-marker mr10"></i>Rua Gonçalves Dias, 400 – Centro
 					<h6><i class="fa fa-map-marker mr10"></i>Rondon do Pará, PA
-					<h6><i class="fa fa-phone mr10"></i>(94) 99124 3941
 					<h6>ouvidoria@rondondopara.pa.gov.br
 					<h6>Expediente das 07:30 às 13:30
 				</div>
 
 			   	<div class="col-4">
-			    	<h3>Redes Sociaís</h3>
-					<div><a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook mr10"></i>Facebook</a></div>
-					<div><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter mr10"></i>Twitter</a></div>
-					<div><a target="_blank" href="https://facebook.com/"><i class="fa fa-youtube mr10"></i>Youtube</a></div>
-					<div><a target="_blank" href="https://instagram.com/"><i class="fa fa-instagram mr10"></i>Instagram</a></div>
-					<br>
+			    	
 			   	</div>
 
 			   	<div class="col-4">
 			    	<h3>Acessos</h3>
 					<div><a href="https://www.rondondopara.pa.gov.br/adm"><i class="fa fa-cog mr10"></i>Admin</a></div>
-					<div><a target="_blank" href="https://www.rondondopara.pa.gov.br/webmail"><i class="fa fa-instagram mr10"></i>Webmail</a></div>
 					<br>
-			   		<!--<a target="_blank" href="https://www.facebook.com/pmsfx/"><img src="res/site/imagens/facebook.png"></a>-->
 			   	</div>
 			</div>	
 		</footer>
@@ -61,7 +53,7 @@
 		<h6>PM Rondon do Pará © All Rights&nbsp;&nbsp;&nbsp;</h6>
 	</div>
 	<div class="col-2">	
-		<h6><a class="creditos" target="_blank" href="http://www.jpweb.com.br/">Desenvolvido por JP WEB</a></h6>
+		<h6><a class="creditos" target="_blank" href="http://www.jpweb.com.br/">Desenvolvido por Gilson Queiroz</a></h6>
 	</div>
 </div></div></div>
 	</div>

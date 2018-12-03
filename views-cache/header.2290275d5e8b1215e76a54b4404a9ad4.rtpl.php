@@ -4,7 +4,7 @@
 <!-- Mirrored from www.rondondopara.pa.gov.br/web/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 Dec 2018 23:02:26 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-<title></title>
+<title>Processo Seletivo - Prefeitura Municipal de Rondon do Pará</title>
 <meta charset="utf-8">
 	
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -12,11 +12,11 @@
 <meta http-equiv="content-script-type" content="text/javascript"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="Prefeitura Municipal de Rondon do Pará"/>
-<meta name="keywords" content="Rondon do Pará Prefeitura Municipal"/>
+<meta name="keywords" content="Rondon do Pará Processo Seletivo"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta name="AUTHOR" content="JP Web">
-<meta name="reply-to" content="jpweb@jpweb.com.br">
-<meta name="URL" content="http://www.jpw.net.br/">
+<meta name="AUTHOR" content="Gilson Queiroz">
+<meta name="reply-to" content="gilsontq@yahoo.com">
+<meta name="URL" content="https://www.rondondopara.pa.gov.br/">
 <meta name="robots" content="index, follow, all">
 <meta name="msnbot" content="all">
 <meta name="googlebot" content="index, follow">
@@ -115,7 +115,7 @@
 
 <div class="entidade">
 	<div class="box-2">
-		<a href="index-2.html">
+		<a href="https://www.rondondopara.pa.gov.br/web/">
 			<span class="entidade-logo">
 				<img src="res/site/imagens/brasao-max.png" title="Página principal" alt="Logo">
 			</span>
@@ -148,75 +148,33 @@
 <div class="button"></div>
 	<ul>
 
-		<li><a href="index-2.html">HOME</a></li>
+		<li><a href="https://www.rondondopara.pa.gov.br/web/">PREFEITURA</a></li>
 
-		<!--<li><a href="pgt.php?pg=governo/list">GOVERNO</a></li>-->
-					<li><a href="#">GOVERNO</a> 
+		<li><a href="#">SISTEMA</a> 
 				<ul>
-										<li><a href="pag5f28.html?pg=governo/view&amp;tag=prefeitomunicipal"><i class="fa fa-caret-right mr5"></i>Prefeito Municipal</a></li>
-												<li><a href="pagdeb3.html?pg=governo/view&amp;tag=vice-prefeita"><i class="fa fa-caret-right mr5"></i>Vice - Prefeita</a></li>
-																	<li><a href="pag368f.html?pg=governo/list&amp;secao=Gabinete%20de%20Governo"><i class="fa fa-caret-right mr5"></i>Gabinete de Governo</a></li>
-											<li><a href="pagba52.html?pg=governo/list&amp;secao=Secretarias"><i class="fa fa-caret-right mr5"></i>Secretarias</a></li>
-											</ul>
-			</li>
-		
-		<li><a href="http://transparencia.rondondopara.pa.gov.br/">TRANSPARÊNCIA</a></li>
-
-		<li><a href="pag4c82.html?pg=blog/list2">NOTÍCIAS</a></li>
-
-		<!--			<li><a href="pag.php?pg=blog/list2">BLOG</a> 
-				<ul>
-							<li><a href="pag.php?pg=blog/list2&secao=Avisos"><i class="fa fa-caret-right mr5"></i>Avisos</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Campanhas"><i class="fa fa-caret-right mr5"></i>Campanhas</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Eventos"><i class="fa fa-caret-right mr5"></i>Eventos</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=meio ambiente"><i class="fa fa-caret-right mr5"></i>meio ambiente</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Notícias"><i class="fa fa-caret-right mr5"></i>Notícias</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Administração"><i class="fa fa-caret-right mr5"></i>Secretaria de Administração</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Agricultura"><i class="fa fa-caret-right mr5"></i>Secretaria de Agricultura</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Assistência Social"><i class="fa fa-caret-right mr5"></i>Secretaria de Assistência Social</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Cultura"><i class="fa fa-caret-right mr5"></i>Secretaria de Cultura</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Educação"><i class="fa fa-caret-right mr5"></i>Secretaria de Educação</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Esporte"><i class="fa fa-caret-right mr5"></i>Secretaria de Esporte</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Finanças"><i class="fa fa-caret-right mr5"></i>Secretaria de Finanças</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Obras"><i class="fa fa-caret-right mr5"></i>Secretaria de Obras</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretaria de Saúde"><i class="fa fa-caret-right mr5"></i>Secretaria de Saúde</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Secretarias de Governo"><i class="fa fa-caret-right mr5"></i>Secretarias de Governo</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Serviço ao Turista"><i class="fa fa-caret-right mr5"></i>Serviço ao Turista</a></li>
-							<li><a href="pag.php?pg=blog/list2&secao=Utilidade Pública"><i class="fa fa-caret-right mr5"></i>Utilidade Pública</a></li>
-							</ul>
-			</li>
-		-->
-		
-		<li><a href="#">MULTIMÍDIAS</a> 
-			<ul>
-			<li><a href="pag3fe6.html?pg=multimidias/audios&amp;secao=%c3%81udios"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;Áudios</a></li>
-			<li><a href="pagb90f.html?pg=multimidias/enquetes"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;Enquetes</a></li>
-			<li><a href="pag2be5.html?pg=multimidias/galerias1&amp;secao=Galerias"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;Galeria</a></li>
-			<li><a href="pag8fb5.html?pg=multimidias/videos1&amp;secao=V%c3%addeos"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;Vídeos</a></li>
-			</ul>
-		</li>
-
-				<!--<div class="tta"></i>Agendas</div>
-		<div class="ttb"></div>-->
-			<li><a href="pag627d.html?pg=blog/list">SERVIÇOS</a> 
-				<ul>
-										<li>
-						<a href="pagf2fb.html?pg=servicos/agenda&amp;secao=Agenda%20de%20Eventos">
-						<i class="fa fa-caret-right mr2"></i> Agenda de Eventos						</a>
-					</li>
-										<li>
-						<a href="pag9541.html?pg=servicos/agenda&amp;secao=Servi%c3%a7os%20ao%20Turista">
-						<i class="fa fa-caret-right mr2"></i> Serviços ao Turista						</a>
-					</li>
-										<li>
-						<a href="pagb05c.html?pg=servicos/agenda&amp;secao=Servi%c3%a7os%20de%20Emerg%c3%aancia">
-						<i class="fa fa-caret-right mr2"></i> Serviços de Emergência						</a>
-					</li>
-										<li><a href="pagda09.html?pg=servicos/contatos"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;Fale Conosco</a></li>
-					<li><a href="pagb300.html?pg=servicos/links&amp;s=Links%20%c3%9ateis"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;Links Úteis</a></li>
-					<li><a href="pag5333.html?pg=servicos/localizacao"><i class="fa fa-caret-right"></i>&nbsp;&nbsp;Localização</a></li>
+					<li><a href="pag5f28.html?pg=governo/view&amp;tag=prefeitomunicipal"><i class="fa fa-caret-right mr5"></i>Sobre</a></li>
+					<li><a href="pagdeb3.html?pg=governo/view&amp;tag=vice-prefeita"><i class="fa fa-caret-right mr5"></i>Legislação</a></li>
 				</ul>
-			</ul>
+		</li>
+		
+		<li><a href="#">SELEÇÕES</a> 
+				<ul>
+					<li><a href="pag5f28.html?pg=governo/view&amp;tag=prefeitomunicipal"><i class="fa fa-caret-right mr5"></i>Abertas</a></li>
+					<li><a href="pagdeb3.html?pg=governo/view&amp;tag=vice-prefeita"><i class="fa fa-caret-right mr5"></i>Em Andamento</a></li>
+					<li><a href="pagdeb3.html?pg=governo/view&amp;tag=vice-prefeita"><i class="fa fa-caret-right mr5"></i>Realizadas</a></li>
+				</ul>
+		</li>
+		
+		<li><a href="#">CANDIDATO</a> 
+				<ul>
+					<li><a href="index.html"><i class="fa fa-caret-right mr5"></i>Minhas Informações</a></li>
+					<li><a href="index.html"><i class="fa fa-caret-right mr5"></i>Minhas inscrições</a></li>
+					<li><a href="index.html"><i class="fa fa-caret-right mr5"></i>Meus Resultados</a></li>
+				</ul>
+		</li>
+		
+		<li><a href="#">ACESSAR</a></li>
+		
 </nav>
 <script>
     (function($)
@@ -320,18 +278,9 @@
 	<form action="https://www.rondondopara.pa.gov.br/web/pag.php?pg=busca" id="formularioBuscar" method="get">
 		<fieldset>
 			<ul class="toolbar clearfix">
-				<li class="cleanToggle"><a href="index-2.html" title="Home"><i class="fa fa-home"></i></a></li>
-				<li class="cleanToggle"><a target="_blank" href="https://twitter.com/" title="Twitter"><i class="fa fa-twitter-square"></i></a></li>
-				<li class="cleanToggle"><a target="_blank" href="https://facebook.com/" title="Facebook"><i class="fa fa-facebook-square"></i></a></li>
-				<li class="cleanToggle"><a target="_blank" href="https://youtube.com/" title="Youtube"><i class="fa fa-youtube-square"></i></a></li>
-				<li class="cleanToggle"><a target="_blank" href="http://prefeiturasonline.com.br:2095/"><i class="fa fa-envelope-square"></i></a></li>
-				<li class="cleanToggle"><a href="https://www.rondondopara.pa.gov.br/adm" title="Admin"><i class="fa fa-cog"></i></a></li>
-				<li>
-					<input type="hidden" value="pesquisa" name="pg" id="pg">
-					<input type="search" id="search" name="busca" id="pesquisa" onKeyPress=”return submitenter(this,event)” placeholder="Busca no site">
-
-				</li>
-				<li><button type="button" id="btn-search" title="Busca no Site"><span><i class="fa fa-search"></i></span></button></li>
+				<li class="cleanToggle"><a href="/" title="Home"><i class="fa fa-home"></i></a></li>
+				<li class="cleanToggle"><a href="admin" title="Admin"><i class="fa fa-cog"></i></a></li>
+				
 			</ul>
 		</fieldset>
 	</form>
