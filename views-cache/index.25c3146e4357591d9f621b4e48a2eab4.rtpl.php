@@ -7,8 +7,8 @@
         <small>Prefeitura Municipal de Rondon do Pará</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Nível</a></li>
-        <li class="active">Aqui</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Início</li>
       </ol>
     </section>
 

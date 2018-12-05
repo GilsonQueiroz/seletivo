@@ -227,6 +227,14 @@ $app->post("/admin/forgot/reset", function(){
 
 });
 
+$app->get("/admin/areadoc", function (){
+
+	$page = new PageAdmin();
+
+	$page->setTpl("areadoc");
+	
+});
+
 
 
 $app->run();
