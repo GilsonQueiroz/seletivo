@@ -58,7 +58,7 @@
       </div>
     </form>
     
-    <a href="#">Esqueci minha senha</a><br>
+    <a href="/admin/forgot">Esqueci minha senha</a><br>
     
   </div>
   <!-- /.login-box-body -->
