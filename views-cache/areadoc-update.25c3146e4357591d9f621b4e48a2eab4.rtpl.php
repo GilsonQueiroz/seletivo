@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -18,11 +18,11 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/areadoc/{$areadoc.idareadoc}" method="post">
+        <form role="form" action="/admin/areadoc/<?php echo htmlspecialchars( $areadoc["idareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post">
           <div class="box-body">
             <div class="form-group">
               <label for="desareadoc">Nome da área de formação</label>
-              <input type="text" class="form-control" id="desareadoc" name="desareadoc" placeholder="Digite o nome da Área de Formação" value="{$areadoc.desareadoc}">
+              <input type="text" class="form-control" id="desareadoc" name="desareadoc" placeholder="Digite o nome da Área de Formação" value="<?php echo htmlspecialchars( $areadoc["desareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
           </div>
           <!-- /.box-body -->

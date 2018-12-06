@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -32,16 +32,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {loop="$areadoc"}
+                  <?php $counter1=-1;  if( isset($areadoc) && ( is_array($areadoc) || $areadoc instanceof Traversable ) && sizeof($areadoc) ) foreach( $areadoc as $key1 => $value1 ){ $counter1++; ?>
                   <tr>
-                    <td>{$value.idareadoc}</td>
-                    <td>{$value.desareadoc}</td>
+                    <td><?php echo htmlspecialchars( $value1["idareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["desareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td>
-                      <a href="/admin/areadoc/{$value.idareadoc}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                      <a href="/admin/areadoc/{$value.idareadoc}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                      <a href="/admin/areadoc/<?php echo htmlspecialchars( $value1["idareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                      <a href="/admin/areadoc/<?php echo htmlspecialchars( $value1["idareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                     </td>
                   </tr>
-                  {/loop}
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
