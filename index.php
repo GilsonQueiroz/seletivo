@@ -510,7 +510,7 @@ $app->get("/areadoc/:idareadoc", function($idareadoc){
 	$page = new Page();
 
 	$page->setTpl("areadoc", [
-		'areadoc'=>$areadoc->getValues()
+		'areadoc'=>$areadoc->get($idareadoc)
 	]);
 
 });
