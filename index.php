@@ -501,6 +501,20 @@ $app->post("/admin/situation/:idsituation", function ($idsituation){
 
 //End Rota situation
 
+$app->get("/areadoc/:idareadoc", function($idareadoc){
+
+	$areadoc = new Areadoc();
+
+	$areadoc->get((int)$idareadoc);
+
+	$page = new Page();
+
+	$page->setTpl("areadoc", [
+		'areadoc'=>$areadoc->getValues()
+	]);
+
+});
+
 
 $app->run();
 

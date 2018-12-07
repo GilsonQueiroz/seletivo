@@ -29,7 +29,7 @@
 	
 	//Pause carousel
 	$myCarousel.carousel({
-	  interval: 1500
+	  interval: 600
 	});  
 	/*$myCarousel.carousel('pause');*/
 	

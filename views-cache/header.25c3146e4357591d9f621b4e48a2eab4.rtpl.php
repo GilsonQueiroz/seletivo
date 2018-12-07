@@ -290,7 +290,7 @@ desired effect
             <li><a href="/admin/typedoc">Documentos - Tipos</a></li>
             <li><a href="/admin/areadoc">Documentos - Áreas de Formação</a></li>
             <li><a href="#">Cadastrar funções</a></li>
-            <li><a href="/admin/situations">Cadastrar situações</a></li>
+            <li><a href="/admin/situation">Cadastrar situações</a></li>
           </ul>
         </li>
       </ul>

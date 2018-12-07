@@ -26,7 +26,8 @@
 				</div>
 
 			   	<div class="col-4">
-			    	
+			    	<?php require $this->checkTemplate("areadoc-menu");?>
+
 			   	</div>
 
 			   	<div class="col-4">

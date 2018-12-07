@@ -33,6 +33,7 @@
                 </thead>
                 <tbody>
                   <?php $counter1=-1;  if( isset($areadoc) && ( is_array($areadoc) || $areadoc instanceof Traversable ) && sizeof($areadoc) ) foreach( $areadoc as $key1 => $value1 ){ $counter1++; ?>
+
                   <tr>
                     <td><?php echo htmlspecialchars( $value1["idareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td><?php echo htmlspecialchars( $value1["desareadoc"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
@@ -42,6 +43,7 @@
                     </td>
                   </tr>
                   <?php } ?>
+
                 </tbody>
               </table>
             </div>

@@ -29,6 +29,8 @@ class Areadoc extends Model{
 
 		$this->setData($results[0]);
 
+		Areadoc::updateFile();
+
 	}
 
 
@@ -52,6 +54,24 @@ class Areadoc extends Model{
 		$sql->query("DELETE FROM tb_areadoc WHERE idareadoc = :idareadoc", array(
 			":idareadoc"=>$this->getidareadoc()
 		));
+
+		Areadoc::updateFile();
+
+	}
+
+	public static function updateFile()
+	{
+
+		$areadoc = Areadoc::listAll();
+
+		$html = [];
+
+		//comando html a se repetir
+		foreach ($areadoc as $row) {
+			array_push($html, '<li><a href="/areadoc/'.$row['idareadoc'].'">'.$row['desareadoc'].'</a></li>');
+		}
+
+		file_put_contents($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "areadoc-menu.html", implode('',$html));
 
 	}
 
