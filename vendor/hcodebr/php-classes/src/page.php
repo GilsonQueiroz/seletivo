@@ -19,14 +19,16 @@ class Page {
 		$this->options = array_merge($this->defaults, $opts);
 
 		$config = array(
-					"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"].$tpl_dir,
-					"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
-					"debug"         => false // set to false to improve the speed
+			"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"].$tpl_dir,
+			"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
+			"debug"         => false // set to false to improve the speed
 		);
 
 		Tpl::configure( $config );
 
 		$this->tpl = new Tpl;
+
+		$this->tpl->assign("user", $_SESSION["User"]);
 
 		$this->setData($this->options["data"]);
 		
@@ -46,6 +48,9 @@ class Page {
 	public function setTpl($name, $data = array(), $returnHTML = false)
 	{
 		
+		//var_dump($this->options);
+		//exit;
+
 		$this->setData($data);
 
 		return $this->tpl->draw($name, $returnHTML);

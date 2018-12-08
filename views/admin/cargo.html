@@ -7,7 +7,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active"><a href="/admin/functions">Funções</a></li>
+    <li class="active"><a href="/admin/cargo">Funções</a></li>
   </ol>
 </section>
 
@@ -19,7 +19,7 @@
   		<div class="box box-primary">
             
             <div class="box-header">
-              <a href="/admin/functions/create" class="btn btn-success">Cadastrar função</a>
+              <a href="/admin/cargo/create" class="btn btn-success">Cadastrar função</a>
             </div>
 
             <div class="box-body no-padding">
@@ -32,14 +32,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {loop="$functions"}
+                  {loop="$cargo"}
                   <tr>
-                    <td>{$value.idfunction}</td>
-                    <td>{$value.desfunction}</td>
+                    <td>{$value.idcargo}</td>
+                    <td>{$value.descargo}</td>
                     <td>{$value.nrgraduation}</td>
                     <td>
-                      <a href="/admin/functions/{$value.idfunction}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                      <a href="/admin/functions/{$value.idfunction}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                      <a href="/admin/cargo/{$value.idcargo}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                      <a href="/admin/cargo/{$value.idcargo}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                     </td>
                   </tr>
                   {/loop}

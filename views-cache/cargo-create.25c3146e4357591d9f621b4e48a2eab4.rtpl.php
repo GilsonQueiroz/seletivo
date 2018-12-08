@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -7,8 +7,8 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="/admin/functions">Funções</a></li>
-    <li class="active"><a href="/admin/functions/create">Cadastrar</a></li>
+    <li><a href="/admin/cargo">Funções</a></li>
+    <li class="active"><a href="/admin/cargo/create">Cadastrar</a></li>
   </ol>
 </section>
 
@@ -23,11 +23,11 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/functions/create" method="post">
+        <form role="form" action="/admin/cargo/create" method="post">
           <div class="box-body">
             <div class="form-group">
-              <label for="desfunction">Nome da função</label>
-              <input type="text" class="form-control" id="desfunction" name="desfunction" placeholder="Digite o nome da função">
+              <label for="descargo">Nome da função</label>
+              <input type="text" class="form-control" id="descargo" name="descargo" placeholder="Digite o nome da função">
             </div>
             <div class="form-group">
               <label for="nrgraduation">Grau de escolaridade</label>

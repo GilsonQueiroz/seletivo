@@ -1,0 +1,1 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><li><a href="/cargo/3">Digitador</a></li><li><a href="/cargo/1">Psicologo</a></li>

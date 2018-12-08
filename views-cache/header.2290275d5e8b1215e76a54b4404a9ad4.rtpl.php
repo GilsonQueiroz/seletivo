@@ -155,16 +155,16 @@
 
 							<li><a href="#">SISTEMA</a> 
 									<ul>
-										<li><a href="pag5f28.html?pg=governo/view&amp;tag=prefeitomunicipal"><i class="fa fa-caret-right mr5"></i>Sobre</a></li>
-										<li><a href="pagdeb3.html?pg=governo/view&amp;tag=vice-prefeita"><i class="fa fa-caret-right mr5"></i>Legislação</a></li>
+										<li><a href="#"><i class="fa fa-caret-right mr5"></i>Sobre</a></li>
+										<li><a href="#"><i class="fa fa-caret-right mr5"></i>Legislação</a></li>
 									</ul>
 							</li>
 							
 							<li><a href="#">SELEÇÕES</a> 
 									<ul>
-										<li><a href="pag5f28.html?pg=governo/view&amp;tag=prefeitomunicipal"><i class="fa fa-caret-right mr5"></i>Abertas</a></li>
-										<li><a href="pagdeb3.html?pg=governo/view&amp;tag=vice-prefeita"><i class="fa fa-caret-right mr5"></i>Em Andamento</a></li>
-										<li><a href="pagdeb3.html?pg=governo/view&amp;tag=vice-prefeita"><i class="fa fa-caret-right mr5"></i>Realizadas</a></li>
+										<li><a href="/edital"><i class="fa fa-caret-right mr5"></i>Abertas</a></li>
+										<li><a href="#"><i class="fa fa-caret-right mr5"></i>Em Andamento</a></li>
+										<li><a href="/edital_encerrado"><i class="fa fa-caret-right mr5"></i>Realizadas</a></li>
 									</ul>
 							</li>
 							
@@ -284,7 +284,6 @@
 									<ul class="toolbar clearfix">
 										<li class="cleanToggle"><a href="/" title="Home"><i class="fa fa-home"></i></a></li>
 										<li class="cleanToggle"><a href="admin" title="Admin"><i class="fa fa-cog"></i></a></li>
-										
 									</ul>
 								</fieldset>
 								</form>

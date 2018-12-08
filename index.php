@@ -10,6 +10,7 @@ use \Hcode\Model\User;
 use \Hcode\Model\Areadoc;
 use \Hcode\Model\Typedoc;
 use \Hcode\Model\Situation;
+use \Hcode\Model\Cargo;
 
 $app = new Slim();
 
@@ -500,18 +501,126 @@ $app->post("/admin/situation/:idsituation", function ($idsituation){
 });
 
 //End Rota situation
+//Rotas function
 
-$app->get("/areadoc/:idareadoc", function($idareadoc){
+$app->get("/admin/cargo", function (){
 
-	$areadoc = new Areadoc();
+	User::verifylogin();
 
-	$areadoc->get((int)$idareadoc);
+	$cargo = Cargo::listAll();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("cargo", [
+		"cargo"=>$cargo
+	]);
+	
+});
+
+$app->get("/admin/cargo/create", function (){
+
+	User::verifylogin();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("cargo-create");
+	
+});
+
+$app->post("/admin/cargo/create", function (){
+
+	User::verifylogin();
+
+	$cargo = new cargo();
+
+	$cargo->setData($_POST);
+
+	$cargo->save();
+
+	header("Location: /admin/cargo");
+	exit;
+	
+});
+
+$app->get("/admin/cargo/:idcargo/delete", function ($idcargo){
+
+	User::verifylogin();
+
+	$cargo = new cargo();
+
+	$cargo->get((int)$idcargo);
+
+	$cargo->delete();
+
+	header("Location: /admin/cargo");
+	exit;
+	
+});
+
+$app->get("/admin/cargo/:idcargo", function ($idcargo){
+
+	User::verifylogin();
+
+	$cargo = new Cargo();
+
+	$cargo->get((int)$idcargo);
+
+	$page = new PageAdmin();
+
+	$page->setTpl("cargo-update", [
+		"cargo"=>$cargo->getValues()
+	]);
+
+});
+
+$app->post("/admin/cargo/:idcargo", function ($idcargo){
+
+	User::verifylogin();
+
+	$cargo = new cargo();
+
+	$cargo->get((int)$idcargo);
+
+	$cargo->setData($_POST);
+
+	$cargo->save();
+
+	header("Location: /admin/cargo");
+	exit;
+
+});
+
+//VER
+$app->get("/cargo/:idcargo", function($idcargo){
+
+	$cargo = new Cargo();
+
+	$cargo->get((int)$idcargo);
 
 	$page = new Page();
 
-	$page->setTpl("areadoc", [
-		'areadoc'=>$areadoc->get($idareadoc)
+	$page->setTpl("cargo", [
+		"cargo"=>$cargo
 	]);
+
+});
+
+//End Rota cargo
+
+
+$app->get('/edital', function() {
+    
+	$page = new Page();
+
+	$page->setTpl("edital");
+
+});
+
+$app->get('/edital_encerrado', function() {
+    
+	$page = new Page();
+
+	$page->setTpl("edital");
 
 });
 
