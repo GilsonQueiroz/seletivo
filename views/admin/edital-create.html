@@ -7,8 +7,8 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="/admin/editais">Editais</a></li>
-    <li class="active"><a href="/admin/editais/create">Cadastrar</a></li>
+    <li><a href="/admin/edital">Editais</a></li>
+    <li class="active"><a href="/admin/edital/create">Cadastrar</a></li>
   </ol>
 </section>
 
@@ -23,7 +23,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/editais/create" method="post">
+        <form role="form" action="/admin/edital/create" method="post" enctype="multipart/form-data">
           <div class="box-body">
             <div class="form-group">
               <label for="descodedital">Código do Edital</label>
@@ -34,12 +34,12 @@
               <input type="text" class="form-control" id="desedital" name="desedital" placeholder="Digite o nome da Edital">
             </div>
             <div class="form-group">
-              <label for="desurl">Endereço do edital</label>
-              <input type="text" class="form-control" id="desurl" name="desurl" placeholder="Localiza o arquivo do Edital">
-            </div>
-            <div class="form-group">
               <label for="desresumo">Resumo do Edital</label>
               <input type="text" class="form-control" id="desresumo" name="desresumo" placeholder="Digite um resumo do Edital">
+            </div>
+            <div class="form-group">
+                 <label for="file">PDF do Edital</label>
+                 <input type="file" class="form-control" id="fileUpload" name="fileUpload">              
             </div>
           </div>
           <!-- /.box-body -->

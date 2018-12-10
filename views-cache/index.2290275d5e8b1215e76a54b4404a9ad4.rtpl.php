@@ -72,7 +72,7 @@
 					<div class="block-full">
 						<div class="bg">
 							<div>
-								<a href=javascript:abreJanela('http://diariomunicipal.com.br/famep/pesquisar')>
+								<a href="/editais_abertos">
 									<center><img src="res/site/imagens/icon-open.png"></center>
 									<h4>EDITAIS <br> Abertos</h4>
 								</a>
@@ -85,7 +85,7 @@
 					<div class="block-full">
 						<div class="bg">
 							<div>
-								<a href=javascript:abreJanela('http://diariomunicipal.com.br/famep/pesquisar')>
+								<a href="/editais_encerrados">
 									<center><img src="res/site/imagens/icon-close.png"></center>
 									<h4>EDITAIS <br> Encerrados</h4>
 								</a>
@@ -98,7 +98,7 @@
 					<div class="block-full">
 						<div class="bg">
 							<div>
-								<a href=javascript:abreJanela('https://sistema.ouvidorias.gov.br/publico/PA/RondonDoPara/Manifestacao/RegistrarManifestacao')>
+								<a href=#>
 									<center><img src="res/site/imagens/icon-results.png"></center>
 									<h4>Meus <br> RESULTADOS</h4>
 								</a>
@@ -111,7 +111,7 @@
 					<div class="block-full">
 						<div class="bg">
 							<div>
-								<a href=javascript:abreJanela('http://www.drhtransparencia.com.br/login.php?un=f9470a9c5982e834a183a0b97322afdf')>
+								<a href=#)>
 									<center><img src="res/site/imagens/icon-profile.png"></center>
 									<h4>Meus <br> DADOS</h4>
 								</a>
@@ -124,7 +124,7 @@
 					<div class="block-full">
 						<div class="bg">
 							<div>
-								<a href="http://transparencia.rondondopara.pa.gov.br/transparencia?ent=1&amp;grupo=institucional&amp;secao=agendaoficial&amp;ano=2018">
+								<a href=#>
 									<center><img src="res/site/imagens/icon-about.png"></center>
 									<h4>SOBRE</h4>
 								</a>

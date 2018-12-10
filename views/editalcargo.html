@@ -2,15 +2,12 @@
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>O combate ao Aedes Aegypti continua</title></head>
-		<meta property="og:image" content="/res/site/imagens/bg_home_seletivo.jpg"/>
-
+		<head><title>Editais Abertos</title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<a class=" mr5" href="#">Categoria</a><i class="fa fa-angle-double-right mr5"></i>
-					<!--O combate ao Aedes Aegypti continua-->
-					<span></span>
+					<a class=" mr5" href="/editalaberto">Editais Abertos</a><i class="fa fa-angle-double-right mr5"></i>
+					<span>{$cargo.descargo}</span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
 
@@ -19,47 +16,36 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">$areadoc.desareadoc</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais Abertos - {$cargo.descargo}</h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
 								<div align="left">
-									<div class="clearfix"></div>
-									<h3 align="left"><i><b>""Dengue, zika e chikungunya: os três vírus circulam ao mesmo tempo pelo Brasil, colocando em risco a saúde da população. O que essas doenças têm em comum? O mesmo vetor, o mosquito Aedes aegypti."
-									"</b></i></h3>
-									<br>
-									<h6>Campanhas, publicado em 02/01/2017</h6>
-									<div style="margin:10px 0">
-										<div class="exibeImagem" style="width:100%;">
-											<img rel="image_src" src="/res/site/imagens/bg_home_seletivo.jpg">
-											<h6></h6>
+									{loop="$edital"}
+									<div class="box">
+										<div class="clearfix"></div>
+										<h3 align="left"><i><b>"Edital 000/2018
+										"</b></i></h3>
+										<br>
+										<h6>Campanhas, publicado em 02/01/2017</h6>
+										<div style="clear:both"></div>
+										<div style="text-align:justify; padding-top:15px">
+											<div>
+												Cargos
+											</div>
+											<div>&nbsp;</div>
+											<div>
+												Descrição
+											</div>
+											<div>&nbsp;</div>
+											<br/><br/>
 										</div>
 									</div>
+									{/loop}
 
-									<div style="clear:both"></div>
-									<div style="text-align:justify; padding-top:15px">
-										<div>
-											Paragrafo 1
-										</div>
-										<div>&nbsp;</div>
-										<div>
-											Paragrafo 2
-										</div>
-										<div>&nbsp;</div>
-										<div>
-											Paragrafo 3
-										</div>
-										<div>&nbsp;</div>
-										<div>
-											<span style="font-size:20px;"><strong>Subtítulos</strong></span>
-										</div>
-										<div>
-											Paragrafo 4
-										</div><br />
-										<div>&nbsp;</div>
-										<br/><br/>
-									</div>
+
 									<!-- abas -->
+
 									<!-- abas -->
 									<div class="tab"></div>
 									<br/>
@@ -69,24 +55,9 @@
 							</div>	
 							<div class="aside col-2-3-1-dmin">
 								<div class="box-wrap">
-									<div class="tta">Menu</div>
+									<div class="tta">Procurar por Cargo</div>
 									<div class="ttb"></div>
-									<div class="aside-col">
-										<a href="pag5985.html?pg=blog/view&amp;tag=secretaria-de-assistencia-social-realiza-encerramento-de-curso-de-informatica">
-										<i class="fa fa-angle-double-right mr10"></i>Secretaria de Assistência Social realiza Encerramento de Curso de Informática		</a>
-									</div>
-									<div class="aside-col">
-										<a href="pag5d79.html?pg=blog/view&amp;tag=prefeito-arnaldo-rocha-participou-de-mobilizacao-municipalista-promovida-pela-confederacao-nacional-dos-municipios-">
-										<i class="fa fa-angle-double-right mr10"></i>Prefeito Arnaldo Rocha participou de Mobilização Municipalista promovida pela ...		</a>
-									</div>
-									<div class="aside-col">
-										<a href="page44c.html?pg=blog/view&amp;tag=secretario-de-obras-realiza-visita-tecnica-nas-ruas-que-receberao-pavimentacao-asfaltica">
-										<i class="fa fa-angle-double-right mr10"></i>Secretário de Obras realiza visita técnica nas ruas que receberão ...		</a>
-									</div>
-									<div class="aside-col">
-										<a href="pagc4b2.html?pg=blog/view&amp;tag=-secretaria-de-saude-realiza-acao-do-novembro-azul">
-										<i class="fa fa-angle-double-right mr10"></i> Secretaria de Saúde realiza ação do Novembro Azul		</a>
-									</div>
+							    	{include="cargo-menu"}
 								</div>
 								<div class="clear"></div>
 								<br>

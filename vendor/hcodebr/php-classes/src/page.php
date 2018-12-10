@@ -3,6 +3,7 @@
 namespace Hcode;
 
 use Rain\Tpl;
+//use \Hcode\Model\User;
 
 class Page {
 
@@ -28,7 +29,7 @@ class Page {
 
 		$this->tpl = new Tpl;
 
-		$this->tpl->assign("user", $_SESSION["User"]);
+		//$this->tpl->assign("user", $_SESSION["User"]);
 
 		$this->setData($this->options["data"]);
 		

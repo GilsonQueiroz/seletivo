@@ -1,1 +1,1 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><li><a href="/cargo/3">Digitador</a></li><li><a href="/cargo/1">Psicologo</a></li>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><li><a href="/editalaberto_4"><i class="fa fa-angle-double-right mr10"></i>Cuidador</a></li><hr><li><a href="/editalaberto_3"><i class="fa fa-angle-double-right mr10"></i>Digitador</a></li><hr><li><a href="/editalaberto_1"><i class="fa fa-angle-double-right mr10"></i>Psicologo</a></li><hr>

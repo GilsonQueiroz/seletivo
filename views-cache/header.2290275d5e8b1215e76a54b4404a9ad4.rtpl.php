@@ -162,9 +162,9 @@
 							
 							<li><a href="#">SELEÇÕES</a> 
 									<ul>
-										<li><a href="/edital"><i class="fa fa-caret-right mr5"></i>Abertas</a></li>
-										<li><a href="#"><i class="fa fa-caret-right mr5"></i>Em Andamento</a></li>
-										<li><a href="/edital_encerrado"><i class="fa fa-caret-right mr5"></i>Realizadas</a></li>
+										<li><a href="/editais_abertos"><i class="fa fa-caret-right mr5"></i>Abertas</a></li>
+										<li><a href="/editais_andamento"><i class="fa fa-caret-right mr5"></i>Em Andamento</a></li>
+										<li><a href="/editais_encerrados"><i class="fa fa-caret-right mr5"></i>Realizadas</a></li>
 									</ul>
 							</li>
 							

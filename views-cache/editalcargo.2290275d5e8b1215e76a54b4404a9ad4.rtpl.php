@@ -1,12 +1,13 @@
-<div class="container">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><div class="container">
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>Editais {$fase}</title></head>
+		<head><title>Editais Abertos</title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<span>Editais {$fase}</span>
+					<a class=" mr5" href="/editalaberto">Editais Abertos</a><i class="fa fa-angle-double-right mr5"></i>
+					<span><?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
 
@@ -15,32 +16,32 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais {$fase}</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais Abertos - <?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
 								<div align="left">
-									{loop="$edital"}
+									<?php $counter1=-1;  if( isset($edital) && ( is_array($edital) || $edital instanceof Traversable ) && sizeof($edital) ) foreach( $edital as $key1 => $value1 ){ $counter1++; ?>
 									<div class="box">
 										<div class="clearfix"></div>
-										<h3 align="left"><i><b>Edital {$value.descodedital}</b></i></h3>
-										<h4 align="left"><i><b>{$value.desedital} - </b></i></h3>
+										<h3 align="left"><i><b>"Edital 000/2018
+										"</b></i></h3>
 										<br>
-										<h6>{$value.desfase} em {$value.dtregister}</h6>
+										<h6>Campanhas, publicado em 02/01/2017</h6>
 										<div style="clear:both"></div>
 										<div style="text-align:justify; padding-top:15px">
 											<div>
-												{$value.desresumo}
+												Cargos
 											</div>
 											<div>&nbsp;</div>
 											<div>
-												Cargos:
+												Descrição
 											</div>
 											<div>&nbsp;</div>
 											<br/><br/>
 										</div>
 									</div>
-									{/loop}
+									<?php } ?>
 
 
 									<!-- abas -->
@@ -56,7 +57,7 @@
 								<div class="box-wrap">
 									<div class="tta">Procurar por Cargo</div>
 									<div class="ttb"></div>
-							    	{include="cargo-menu"}
+							    	<?php require $this->checkTemplate("cargo-menu");?>
 								</div>
 								<div class="clear"></div>
 								<br>

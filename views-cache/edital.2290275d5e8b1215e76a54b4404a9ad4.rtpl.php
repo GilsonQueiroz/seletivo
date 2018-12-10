@@ -2,15 +2,11 @@
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>Editais Abertos</title></head>
-		<meta property="og:image" content="/res/site/imagens/bg_home_seletivo.jpg"/>
-
+		<head><title>Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?></title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<a class=" mr5" href="#">Categoria</a><i class="fa fa-angle-double-right mr5"></i>
-					<!--O combate ao Aedes Aegypti continua-->
-					<span>Edital aberto</span>
+					<span>Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
 
@@ -19,47 +15,36 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais Abertos</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
 								<div align="left">
-									<div class="clearfix"></div>
-									<h3 align="left"><i><b>""Dengue, zika e chikungunya: os três vírus circulam ao mesmo tempo pelo Brasil, colocando em risco a saúde da população. O que essas doenças têm em comum? O mesmo vetor, o mosquito Aedes aegypti."
-									"</b></i></h3>
-									<br>
-									<h6>Campanhas, publicado em 02/01/2017</h6>
-									<div style="margin:10px 0">
-										<div class="exibeImagem" style="width:100%;">
-											<img rel="image_src" src="/res/site/imagens/bg_home_seletivo.jpg">
-											<h6></h6>
+									<?php $counter1=-1;  if( isset($edital) && ( is_array($edital) || $edital instanceof Traversable ) && sizeof($edital) ) foreach( $edital as $key1 => $value1 ){ $counter1++; ?>
+									<div class="box">
+										<div class="clearfix"></div>
+										<h3 align="left"><i><b>Edital <?php echo htmlspecialchars( $value1["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></b></i></h3>
+										<h4 align="left"><i><b><?php echo htmlspecialchars( $value1["desedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?> - </b></i></h3>
+										<br>
+										<h6><?php echo htmlspecialchars( $value1["desfase"], ENT_COMPAT, 'UTF-8', FALSE ); ?> em <?php echo htmlspecialchars( $value1["dtregister"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h6>
+										<div style="clear:both"></div>
+										<div style="text-align:justify; padding-top:15px">
+											<div>
+												<?php echo htmlspecialchars( $value1["desresumo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
+											</div>
+											<div>&nbsp;</div>
+											<div>
+												Cargos:
+											</div>
+											<div>&nbsp;</div>
+											<br/><br/>
 										</div>
 									</div>
+									<?php } ?>
 
-									<div style="clear:both"></div>
-									<div style="text-align:justify; padding-top:15px">
-										<div>
-											Paragrafo 1
-										</div>
-										<div>&nbsp;</div>
-										<div>
-											Paragrafo 2
-										</div>
-										<div>&nbsp;</div>
-										<div>
-											Paragrafo 3
-										</div>
-										<div>&nbsp;</div>
-										<div>
-											<span style="font-size:20px;"><strong>Subtítulos</strong></span>
-										</div>
-										<div>
-											Paragrafo 4
-										</div><br />
-										<div>&nbsp;</div>
-										<br/><br/>
-									</div>
+
 									<!-- abas -->
+
 									<!-- abas -->
 									<div class="tab"></div>
 									<br/>

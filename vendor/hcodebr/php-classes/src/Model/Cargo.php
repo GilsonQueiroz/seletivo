@@ -73,7 +73,7 @@ class Cargo extends Model{
 
 		//comando html a se repetir
 		foreach ($cargo as $row) {
-			array_push($html, '<div class="aside-col"><a href="/cargo/'.$row['idcargo'].'"><i class="fa fa-angle-double-right mr10"></i>'.$row['descargo'].'</a></div>');
+			array_push($html, '<li><a href="/editalaberto_'.$row['idcargo'].'"><i class="fa fa-angle-double-right mr10"></i>'.$row['descargo'].'</a></li><hr>');
 		}
 
 		file_put_contents($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "cargo-menu.html", implode('',$html));
