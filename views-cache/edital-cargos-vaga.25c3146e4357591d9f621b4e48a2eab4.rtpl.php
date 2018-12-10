@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -22,17 +22,17 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/edital/{$edital.idedital}/vagas/{cargo.idcargo}/add" method="post">
+        <form role="form" action="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/vagas/{cargo.idcargo}/add" method="post">
           <div class="box-body">
             <div class="form-group">
               <label for="descodedital">Edital</label>
-              <input type="text" class="form-control" readonly="readonly" id="descodedital" name="descodedital" value="{$edital.descodedital}">
+              <input type="text" class="form-control" readonly="readonly" id="descodedital" name="descodedital" value="<?php echo htmlspecialchars( $edital["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
           </div>
           <div class="box-body">
             <div class="form-group">
               <label for="descargo">Cargo</label>
-              <input type="text" class="form-control" readonly="readonly" id="descargo" name="descargo" value="{$cargo.descargo}">
+              <input type="text" class="form-control" readonly="readonly" id="descargo" name="descargo" value="<?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
           </div>
           <div class="box-body">

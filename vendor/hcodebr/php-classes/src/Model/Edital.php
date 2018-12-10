@@ -166,6 +166,8 @@ class Edital extends Model{
 
 	}
 
+	
+
 }
 
 

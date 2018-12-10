@@ -4,6 +4,7 @@ use \Hcode\PageAdmin;
 use \Hcode\Model\User;
 use \Hcode\Model\Edital;
 use \Hcode\Model\Cargo;
+use \Hcode\Model\Vacancy;
 
 //Rotas Edital - Admin
 
@@ -168,15 +169,11 @@ $app->post("/admin/edital/:idedital/vagas/:idcargo/add", function ($idedital, $i
 
 	User::verifylogin();
 
-	$edital = new Edital();
+	$vacancy = new Vacancy();
 
-	$edital->get((int)$idedital);
+	$vacancy->setData($_POST);
 
-	$cargo = new Cargo();
-
-	$cargo->get((int)$idcargo);
-
-	$edital->addCargo($cargo);
+	$vacancy->addCargo($idedital, $idcargo);
 
 	header("Location: /admin/edital/".$idedital."/vagas");
 	exit;

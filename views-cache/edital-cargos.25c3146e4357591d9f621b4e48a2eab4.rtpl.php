@@ -4,7 +4,6 @@
 <section class="content-header">
   <h1>
     Vagas do Edital <?php echo htmlspecialchars( $edital["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
-
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -36,16 +35,14 @@
                         </thead>
                         <tbody>
                             <?php $counter1=-1;  if( isset($cargosNotRelated) && ( is_array($cargosNotRelated) || $cargosNotRelated instanceof Traversable ) && sizeof($cargosNotRelated) ) foreach( $cargosNotRelated as $key1 => $value1 ){ $counter1++; ?>
-
                             <tr>
                             <td><?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td><?php echo htmlspecialchars( $value1["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td>
-                                <a href="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/cargo/<?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add" class="btn btn-primary btn-xs pull-right"><i class="fa fa-arrow-right"></i> Adicionar</a>
+                                <a href="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/vagas/<?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add" class="btn btn-primary btn-xs pull-right"><i class="fa fa-arrow-right"></i> Adicionar</a>
                             </td>
                             </tr>
                             <?php } ?>
-
                         </tbody>
                     </table>
                 </div>
@@ -69,16 +66,14 @@
                         </thead>
                         <tbody>
                             <?php $counter1=-1;  if( isset($cargosRelated) && ( is_array($cargosRelated) || $cargosRelated instanceof Traversable ) && sizeof($cargosRelated) ) foreach( $cargosRelated as $key1 => $value1 ){ $counter1++; ?>
-
                             <tr>
                             <td><?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td><?php echo htmlspecialchars( $value1["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td>
-                                <a href="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/cargo/<?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/remove" class="btn btn-danger btn-xs pull-right"><i class="fa fa-arrow-left"></i> Remover</a>
+                                <a href="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/vagas/<?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/remove" class="btn btn-danger btn-xs pull-right"><i class="fa fa-arrow-left"></i> Remover</a>
                             </td>
                             </tr>
                             <?php } ?>
-
                         </tbody>
                     </table>
                 </div>
