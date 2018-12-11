@@ -61,6 +61,7 @@
                             <tr>
                             <th style="width: 10px">#</th>
                             <th>Nome do Cargo</th>
+                            <th>Qt. de Vagas</th>
                             <th style="width: 240px">&nbsp;</th>
                             </tr>
                         </thead>
@@ -69,6 +70,7 @@
                             <tr>
                             <td>{$value.idcargo}</td>
                             <td>{$value.descargo}</td>
+                            <td>{$value.nrvacancy}</td>
                             <td>
                                 <a href="/admin/edital/{$edital.idedital}/vagas/{$value.idcargo}/remove" class="btn btn-danger btn-xs pull-right"><i class="fa fa-arrow-left"></i> Remover</a>
                             </td>

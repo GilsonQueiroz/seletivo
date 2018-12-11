@@ -61,6 +61,7 @@
                             <tr>
                             <th style="width: 10px">#</th>
                             <th>Nome do Cargo</th>
+                            <th>Qt. de Vagas</th>
                             <th style="width: 240px">&nbsp;</th>
                             </tr>
                         </thead>
@@ -69,6 +70,7 @@
                             <tr>
                             <td><?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td><?php echo htmlspecialchars( $value1["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                            <td><?php echo htmlspecialchars( $value1["nrvacancy"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td>
                                 <a href="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/vagas/<?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/remove" class="btn btn-danger btn-xs pull-right"><i class="fa fa-arrow-left"></i> Remover</a>
                             </td>
