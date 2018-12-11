@@ -166,7 +166,31 @@ class Edital extends Model{
 
 	}
 
-	
+	public function addCargo(Cargo $cargo, $vagas)
+	{
+
+		$sql = new SqL();
+
+		$sql->query("INSERT INTO tb_vacancies (idedital, idcargo, nrvacancy) VALUES(:idedital, :idcargo, :nrvacancy)", array(
+			":idedital"=>$this->getidedital(),
+			":idcargo"=>$cargo->getidcargo(),
+			":nrvacancy"=>$vagas
+		));
+
+	}
+
+    public function removeCargo(Cargo $cargo)
+	{
+
+		$sql = new SqL();
+
+		$sql->query("DELETE FROM tb_vacancies WHERE idedital = :idedital AND idcargo = :idcargo", array(
+			":idedital"=>$this->getidedital(),
+			":idcargo"=>$cargo->getidcargo()
+		));
+
+	}
+
 
 }
 

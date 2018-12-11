@@ -169,11 +169,17 @@ $app->post("/admin/edital/:idedital/vagas/:idcargo/add", function ($idedital, $i
 
 	User::verifylogin();
 
-	$vacancy = new Vacancy();
+	$edital = new Edital();
 
-	$vacancy->setData($_POST);
+	$edital->get((int)$idedital);
 
-	$vacancy->addCargo($idedital, $idcargo);
+	$cargo = new Cargo();
+
+	$cargo->get((int)$idcargo);
+
+	$vagas = $_POST["vacancy"];
+
+	$edital->addCargo($cargo, $vagas);
 
 	header("Location: /admin/edital/".$idedital."/vagas");
 	exit;

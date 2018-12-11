@@ -17,32 +17,6 @@ class Vacancy extends Model{
 	}
 */
 
-    public function addCargo($idedital, $idcargo)
-	{
-
-		$sql = new SqL();
-
-		$sql->query("INSERT INTO tb_vacancies (idvacancy, idedital, idcargo, nrvacancy) VALUES(:idvacancy, :idedital, :idcargo, :nrvacancy)", array(
-			":idvacancy"=>$this->getidvacany(),
-			":idedital"=>$idedital,
-			":idcargo"=>$idcargo,
-			":nrvacancy"=>$this->getnrvacany()
-		));
-
-	}
-
-    public function removeCargo($idedital, $idcargo)
-	{
-
-		$sql = new SqL();
-
-		$sql->query("DELETE FROM tb_vacancies WHERE idedital = :idedital AND idcargo = :idcargo", array(
-			":idedital"=>$idedital,
-			":idcargo"=>$idcargo
-		));
-
-	}
-
 	public function get($idvacancy){
 
 		$sql = new SqL();

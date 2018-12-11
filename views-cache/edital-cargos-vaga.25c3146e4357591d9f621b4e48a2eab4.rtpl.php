@@ -22,7 +22,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/vagas/{cargo.idcargo}/add" method="post">
+        <form role="form" action="/admin/edital/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/vagas/<?php echo htmlspecialchars( $cargo["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/add" method="post">
           <div class="box-body">
             <div class="form-group">
               <label for="descodedital">Edital</label>
@@ -37,8 +37,8 @@
           </div>
           <div class="box-body">
             <div class="form-group">
-              <label for="nrvacancy">Quantidade de vagas</label>
-              <input type="number" step=1 class="form-control" id="nrvacancy" name="nrvacancy" value="1">
+              <label for="vacancy">Quantidade de vagas</label>
+              <input type="number" step=1 class="form-control" id="vacancy" name="vacancy" value="1">
             </div>
           </div>
           <!-- /.box-body -->
