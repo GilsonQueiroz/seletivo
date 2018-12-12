@@ -79,10 +79,10 @@ desired effect
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-success"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
+              <li class="header"></li>
               <li>
                 <!-- inner menu: contains the messages -->
                 <ul class="menu">
@@ -94,18 +94,16 @@ desired effect
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
                       </h4>
                       <!-- The message -->
-                      <p>Why not buy a new awesome theme?</p>
+                      <p></p>
                     </a>
                   </li>
                   <!-- end message -->
                 </ul>
                 <!-- /.menu -->
               </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
+              <li class="footer"><a href="#"></a></li>
             </ul>
           </li>
           <!-- /.messages-menu -->
@@ -115,22 +113,22 @@ desired effect
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning">10</span>
+              <span class="label label-warning"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <li class="header"></li>
               <li>
                 <!-- Inner Menu: contains the notifications -->
                 <ul class="menu">
                   <li><!-- start notification -->
                     <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                      <i class="fa fa-users text-aqua"></i> 
                     </a>
                   </li>
                   <!-- end notification -->
                 </ul>
               </li>
-              <li class="footer"><a href="#">View all</a></li>
+              <li class="footer"><a href="#"></a></li>
             </ul>
           </li>
           <!-- Tasks Menu -->
@@ -138,10 +136,10 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
-              <span class="label label-danger">9</span>
+              <span class="label label-danger"></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 9 tasks</li>
+              <li class="header"></li>
               <li>
                 <!-- Inner menu: contains the tasks -->
                 <ul class="menu">
@@ -149,14 +147,14 @@ desired effect
                     <a href="#">
                       <!-- Task title and progress text -->
                       <h3>
-                        Design some buttons
-                        <small class="pull-right">20%</small>
+                        
+                        <small class="pull-right"></small>
                       </h3>
                       <!-- The progress bar -->
                       <div class="progress xs">
                         <!-- Change the css width attribute to simulate progress -->
                         <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
+                          <span class="sr-only"></span>
                         </div>
                       </div>
                     </a>
@@ -165,7 +163,7 @@ desired effect
                 </ul>
               </li>
               <li class="footer">
-                <a href="#">View all tasks</a>
+                <a href="#"></a>
               </li>
             </ul>
           </li>
@@ -176,14 +174,14 @@ desired effect
               <!-- The user image in the navbar-->
               <img src="/res/admin/dist/img/logado.png" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">$user.desperson</span>
+              <span class="hidden-xs"><?php echo htmlspecialchars( $_SESSION['User']['desperson'], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
                 <img src="/res/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 <p>
-                  $user.desperson
+                  <?php echo htmlspecialchars( $_SESSION['User']['desperson'], ENT_COMPAT, 'UTF-8', FALSE ); ?> 
                   <small>Administrador</small>
                 </p>
               </li>
@@ -227,7 +225,7 @@ desired effect
           <img src="/res/admin/dist/img/logado.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>$user.desperson</p>
+          <p><?php echo htmlspecialchars( $_SESSION['User']['desperson'], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>

@@ -16,15 +16,13 @@ class User extends Model{
 
 		$sql = new SqL();
 
-		$results = $sql->select("SELECT * FROM tb_users WHERE deslogin = :Login", array(
+		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson = b.idperson WHERE a.deslogin = :Login", array(
 				":Login"=>$login
 		));
 
-				if (count($results) === 0)
+		if (count($results) === 0)
 		{
-
 			throw new \Exception("Usuário inexistente ou senha inválida.");
-
 		}
 
 		$data = $results[0];
@@ -33,6 +31,8 @@ class User extends Model{
 		{
 
 			$user = new User();
+
+			$data['desperson'] = utf8_encode($data['desperson']);
 
 			$user->setData($data);
 
