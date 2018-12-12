@@ -80,6 +80,21 @@ class Cargo extends Model{
 
 	}
 
+	public function getCargoEdital(){
+
+		$sql = new Sql();
+
+		return $sql->select("SELECT * FROM tb_vacancies v INNER JOIN 
+								(SELECT * FROM tb_cargos WHERE idcargo IN(
+	    						SELECT a.idcargo FROM tb_cargos a
+								INNER JOIN tb_vacancies b ON a.idcargo = b.idcargo
+								WHERE b.idedital = :idedital)) s ON v.idcargo = s.idcargo WHERE v.idedital = :idedital;
+						);
+			", [':idedital'=>$this->getidedital()]);
+
+	}
+
+
 }
 
 

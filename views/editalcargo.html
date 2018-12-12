@@ -2,11 +2,11 @@
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>Editais Abertos</title></head>
+		<head><title>Editais {$fase}</title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<a class=" mr5" href="/editalaberto">Editais Abertos</a><i class="fa fa-angle-double-right mr5"></i>
+					<a class=" mr5" href="/editalaberto">Editais {$fase}</a><i class="fa fa-angle-double-right mr5"></i>
 					<span>{$cargo.descargo}</span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
@@ -16,7 +16,7 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais Abertos - {$cargo.descargo}</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais {$fase} - {$cargo.descargo}</h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
@@ -24,18 +24,18 @@
 									{loop="$edital"}
 									<div class="box">
 										<div class="clearfix"></div>
-										<h3 align="left"><i><b>"Edital 000/2018
-										"</b></i></h3>
+										<h3 align="left"><i><b>Edital {$value.descodedital}</b></i></h3>
+										<h4 align="left"><i><b>{$value.desedital} - </b></i></h3>
 										<br>
-										<h6>Campanhas, publicado em 02/01/2017</h6>
+										<h6>{$value.desfase} em {$value.dtregister}</h6>
 										<div style="clear:both"></div>
 										<div style="text-align:justify; padding-top:15px">
 											<div>
-												Cargos
+												{$value.desresumo}
 											</div>
 											<div>&nbsp;</div>
 											<div>
-												Descrição
+												Cargos:
 											</div>
 											<div>&nbsp;</div>
 											<br/><br/>
@@ -86,4 +86,3 @@
 		</div>	
 	</div>
 </div>
-<div class="clear"></div>

@@ -2,11 +2,11 @@
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>Editais Abertos</title></head>
+		<head><title>Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?></title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<a class=" mr5" href="/editalaberto">Editais Abertos</a><i class="fa fa-angle-double-right mr5"></i>
+					<a class=" mr5" href="/editalaberto">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?></a><i class="fa fa-angle-double-right mr5"></i>
 					<span><?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
@@ -16,7 +16,7 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais Abertos - <?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?> - <?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
@@ -24,18 +24,18 @@
 									<?php $counter1=-1;  if( isset($edital) && ( is_array($edital) || $edital instanceof Traversable ) && sizeof($edital) ) foreach( $edital as $key1 => $value1 ){ $counter1++; ?>
 									<div class="box">
 										<div class="clearfix"></div>
-										<h3 align="left"><i><b>"Edital 000/2018
-										"</b></i></h3>
+										<h3 align="left"><i><b>Edital <?php echo htmlspecialchars( $value1["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></b></i></h3>
+										<h4 align="left"><i><b><?php echo htmlspecialchars( $value1["desedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?> - </b></i></h3>
 										<br>
-										<h6>Campanhas, publicado em 02/01/2017</h6>
+										<h6><?php echo htmlspecialchars( $value1["desfase"], ENT_COMPAT, 'UTF-8', FALSE ); ?> em <?php echo htmlspecialchars( $value1["dtregister"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h6>
 										<div style="clear:both"></div>
 										<div style="text-align:justify; padding-top:15px">
 											<div>
-												Cargos
+												<?php echo htmlspecialchars( $value1["desresumo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
 											</div>
 											<div>&nbsp;</div>
 											<div>
-												Descrição
+												Cargos:
 											</div>
 											<div>&nbsp;</div>
 											<br/><br/>
@@ -86,4 +86,3 @@
 		</div>	
 	</div>
 </div>
-<div class="clear"></div>

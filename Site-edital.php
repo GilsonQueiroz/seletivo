@@ -45,9 +45,13 @@ $app->get('/editais_encerrados', function() {
 
 });
 
+// End Rota Edital - Site
+// Rotas Edital / Cargo - Site
 
 $app->get('/editalaberto_:idcargo', function($idcargo) {
     
+	$edital = new Edital();
+
 	$cargo = new Cargo();
 
 	$cargo->get((int)$idcargo);
@@ -55,8 +59,9 @@ $app->get('/editalaberto_:idcargo', function($idcargo) {
 	$page = new Page();
 
 	$page->setTpl("editalcargo", [
-		'cargo'=>$cargo->getValues(),
-		'edital'=>[]
+		"cargo"=>$cargo->getValues(),
+		"edital"=>$edital->getCargos(),
+		"fase"=>"Abertos"
 	]);
 
 });
