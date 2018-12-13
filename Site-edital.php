@@ -50,17 +50,20 @@ $app->get('/editais_encerrados', function() {
 
 $app->get('/editalaberto_:idcargo', function($idcargo) {
     
-	$edital = new Edital();
-
 	$cargo = new Cargo();
 
 	$cargo->get((int)$idcargo);
 
+	$cargosEdital = Cargo::getCargosEdital($idcargo, '3');
+
 	$page = new Page();
 
+//	var_dump($cargo);
+//	exit;
+
 	$page->setTpl("editalcargo", [
-		"cargo"=>$cargo->getValues(),
-		"edital"=>$edital->getCargos(),
+		"nomeCargo"=>$cargo->getdescargo(),
+		"editais"=>$cargosEdital,
 		"fase"=>"Abertos"
 	]);
 

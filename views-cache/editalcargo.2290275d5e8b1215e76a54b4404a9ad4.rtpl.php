@@ -7,7 +7,7 @@
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
 					<a class=" mr5" href="/editalaberto">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?></a><i class="fa fa-angle-double-right mr5"></i>
-					<span><?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+					<span><?php echo htmlspecialchars( $nomeCargo, ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
 
@@ -16,12 +16,12 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?> - <?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?> - <?php echo htmlspecialchars( $nomeCargo, ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
 								<div align="left">
-									<?php $counter1=-1;  if( isset($edital) && ( is_array($edital) || $edital instanceof Traversable ) && sizeof($edital) ) foreach( $edital as $key1 => $value1 ){ $counter1++; ?>
+									<?php $counter1=-1;  if( isset($editais) && ( is_array($editais) || $editais instanceof Traversable ) && sizeof($editais) ) foreach( $editais as $key1 => $value1 ){ $counter1++; ?>
 									<div class="box">
 										<div class="clearfix"></div>
 										<h3 align="left"><i><b>Edital <?php echo htmlspecialchars( $value1["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></b></i></h3>

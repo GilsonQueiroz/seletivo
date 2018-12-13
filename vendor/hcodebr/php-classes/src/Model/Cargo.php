@@ -80,18 +80,32 @@ class Cargo extends Model{
 
 	}
 
-	public function getCargoEdital(){
+	public function getCargosEdital($idcargo, $idfase){
 
 		$sql = new Sql();
 
-		return $sql->select("SELECT * FROM tb_vacancies v INNER JOIN 
-								(SELECT * FROM tb_cargos WHERE idcargo IN(
-	    						SELECT a.idcargo FROM tb_cargos a
-								INNER JOIN tb_vacancies b ON a.idcargo = b.idcargo
-								WHERE b.idedital = :idedital)) s ON v.idcargo = s.idcargo WHERE v.idedital = :idedital;
-						);
-			", [':idedital'=>$this->getidedital()]);
-
+		return $sql->select("
+			SELECT * FROM
+				(SELECT v.idvacancy, v.idedital, v.idcargo, v.nrvacancy, s.descodedital, s.desedital, s.dtregister, s.desresumo, s.idatualfase, s.desfase
+				FROM tb_vacancies v INNER JOIN
+					(SELECT * FROM	 
+						(SELECT * FROM tb_editais WHERE idedital IN 
+							(SELECT a.idedital FROM tb_editais a
+							INNER JOIN tb_vacancies b ON a.idedital = b.idedital
+							WHERE b.idcargo = :idcargo
+							)
+						) e INNER JOIN tb_fases f ON e.idatualfase = f.idfase WHERE e.idatualfase = :idfase
+					) s ON v.idedital = s.idedital WHERE v.idcargo = :idcargo
+				) t
+			INNER JOIN 
+				(SELECT c.idcargo, c.descargo, c.nrgraduation, g.desgraduation, c.desrequeriment, c.desactivity, c.desbasesalary, c.desweekhours 
+				FROM tb_cargos c INNER JOIN tb_graduations g ON c.nrgraduation = g.nrgraduation
+				) j
+			ON t.idcargo = j.idcargo;
+			", [
+				':idcargo'=>$idcargo,
+				':idfase'=>$idfase
+			]);
 	}
 
 
