@@ -14,7 +14,8 @@ $app->get('/editais_abertos', function() {
 
 	$page->setTpl("edital", [
 		"edital"=>$edital,
-		"fase"=>"Abertos"
+		"fase"=>"Abertos",
+		"button"=>" Participar "
 	]);
 
 });
@@ -27,7 +28,8 @@ $app->get('/editais_andamento', function() {
 
 	$page->setTpl("edital", [
 		"edital"=>$edital,
-		"fase"=>"Em Andamento"
+		"fase"=>"Em Andamento",
+		"button"=>" Visualizar "
 	]);
 
 });
@@ -40,7 +42,8 @@ $app->get('/editais_encerrados', function() {
 
 	$page->setTpl("edital", [
 		"edital"=>$edital,
-		"fase"=>"Encerrados"
+		"fase"=>"Encerrados",
+		"button"=>" Ver Resultado "
 	]);
 
 });
