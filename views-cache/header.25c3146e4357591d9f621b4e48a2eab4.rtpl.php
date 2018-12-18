@@ -256,6 +256,7 @@ desired effect
           </a>
           <ul class="treeview-menu">
             <li><a href="/admin/edital">Edital</a></li>
+            <li><a href="#">Arquivos do Edital</a></li>
             <li><a href="/admin/edital/vagas">Vagas do Edital</a></li>
             <li><a href="#">Regras do Edital</a></li>
           </ul>

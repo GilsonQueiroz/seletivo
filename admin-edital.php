@@ -22,21 +22,6 @@ $app->get("/admin/edital", function (){
 	
 });
 
-$app->get("/admin/edital/vagas", function (){
-
-	User::verifylogin();
-
-	$edital = Edital::listAll();
-
-	$page = new PageAdmin();
-
-	$page->setTpl("edital-vagas", [
-		"edital"=>$edital
-	]);
-	
-});
-
-
 $app->get("/admin/edital/create", function (){
 
 	User::verifylogin();
@@ -125,6 +110,20 @@ $app->post("/admin/edital/:idedital", function ($idedital){
 //End Rota edital - Admin
 
 //Rotas Vagas
+
+$app->get("/admin/edital/vagas", function (){
+
+	User::verifylogin();
+
+	$edital = Edital::listAll();
+
+	$page = new PageAdmin();
+
+	$page->setTpl("edital-vagas", [
+		"edital"=>$edital
+	]);
+	
+});
 
 $app->get("/admin/edital/:idedital/vagas", function ($idedital){
 

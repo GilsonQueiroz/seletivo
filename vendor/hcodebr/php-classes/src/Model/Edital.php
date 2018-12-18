@@ -83,6 +83,7 @@ class Edital extends Model{
 			":idedital"=>$this->getidedital()
 		));
 
+		//Apagar pdfs (Alterar para apagar todas)
 		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf";
 
 		if (file_exists($pfile)) {
@@ -94,50 +95,6 @@ class Edital extends Model{
 
 	}
 
-	public function checkpdf()
-	{
-
-		if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf")) {
-
-			$filename = "Edital" . $this->getidedital() . ".pdf";
-
-		} else {
-
-			$filename = "Editalbase.pdf";
-
-		}
-
-		return $this->setdesfile($filename);
-
-	}
-
-
-	public function uploadPDF($file)
-	{
-
-		$extension = explode('.', $file['name']);
-
-		$extension = end($extension);
-
-		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf";
-
-		if ($extension === "pdf") {
-
-			if (move_uploaded_file($file['tmp_name'], $pfile)) {
-
-			} else {
-
-				throw new Exception("Não foi possível realizar o upload");
-
-			}
-
-		} else {
-
-			throw new Exception("Tipo de arquivo não permitido");
-
-		}
-
-	}
 
 	public function getCargos($related = true)
 	{
@@ -191,6 +148,53 @@ class Edital extends Model{
 		));
 
 	}
+
+// Checar se tem pdf
+	public function checkpdf()
+	{
+
+		if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf")) {
+
+			$filename = "Edital" . $this->getidedital() . ".pdf";
+
+		} else {
+
+			$filename = "Editalbase.pdf";
+
+		}
+
+		return $this->setdesfile($filename);
+
+	}
+
+//fazer upload do pdf
+	public function uploadPDF($file)
+	{
+
+		$extension = explode('.', $file['name']);
+
+		$extension = end($extension);
+
+		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf";
+
+		if ($extension === "pdf") {
+
+			if (move_uploaded_file($file['tmp_name'], $pfile)) {
+
+			} else {
+
+				throw new Exception("Não foi possível realizar o upload");
+
+			}
+
+		} else {
+
+			throw new Exception("Tipo de arquivo não permitido");
+
+		}
+
+	}
+
 
 
 }
