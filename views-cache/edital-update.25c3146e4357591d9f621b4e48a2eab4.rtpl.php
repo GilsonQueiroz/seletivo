@@ -33,9 +33,8 @@
               <input type="text" class="form-control" id="desresumo" name="desresumo" placeholder="Digite um resumo do Edital" Value="<?php echo htmlspecialchars( $edital["desresumo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
             <div class="form-group">
-              <label for="file">PDF do edital</label>
-              <input type="file" class="form-control" id="fileUpload" name="fileUpload">
-              <label for="file">Arquivo atual: </label><input readonly="readonly" Value="<?php echo htmlspecialchars( $edital["desfile"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+              <label for="desurl">Url do Edital</label>
+              <input type="text" class="form-control" id="desurl" name="desurl" placeholder="Digite uma url para a página de detalhe" Value="<?php echo htmlspecialchars( $edital["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">              
             </div>
           </div>
           <!-- /.box-body -->

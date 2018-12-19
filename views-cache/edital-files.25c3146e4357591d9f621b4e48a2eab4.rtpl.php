@@ -1,4 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -29,17 +29,19 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {loop="$edital"}
+                  <?php $counter1=-1;  if( isset($edital) && ( is_array($edital) || $edital instanceof Traversable ) && sizeof($edital) ) foreach( $edital as $key1 => $value1 ){ $counter1++; ?>
+
                   <tr>
-                    <td>{$value.idedital}</td>
-                    <td>{$value.descodedital}</td>
-                    <td>{$value.desedital}</td>
-                    <td>{$value.desfase}</td>
+                    <td><?php echo htmlspecialchars( $value1["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["desedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                    <td><?php echo htmlspecialchars( $value1["desfase"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td>
-                      <a href="/admin/edital_files/{$value.idedital}" class="btn btn-info btn-xs"><i class="fa fa-file-pdf-o"></i> Arquivos </a>
+                      <a href="/admin/edital_files/<?php echo htmlspecialchars( $value1["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-info btn-xs"><i class="fa fa-file-pdf-o"></i> Arquivos </a>
                     </td>
                   </tr>
-                  {/loop}
+                  <?php } ?>
+
                 </tbody>
               </table>
             </div>

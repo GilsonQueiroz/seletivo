@@ -14,6 +14,7 @@ class Edital extends Model{
 		$sql = new SqL();
 
 		return $sql->select("SELECT * FROM tb_editais a INNER JOIN tb_fases b ON a.idatualfase = b.idfase ORDER BY descodedital");
+
 	}
 
 	public static function listAberto()
@@ -46,13 +47,11 @@ class Edital extends Model{
 
 		$sql = new SqL();
 
-		$this->checkPdf();
-
-		$results = $sql->select("CALL sp_editais_save(:idedital, :descodedital, :desedital, :desfile, :desresumo, :idatualfase)", array(
+		$results = $sql->select("CALL sp_editais_save(:idedital, :descodedital, :desedital, :desurl, :desresumo, :idatualfase)", array(
 			":idedital"=>$this->getidedital(),
 			":descodedital"=>$this->getdescodedital(),
 			":desedital"=>$this->getdesedital(),
-			":desfile"=>$this->getdesfile(),
+			":desurl"=>$this->getdesurl(),
 			":desresumo"=>$this->getdesresumo(),
 			":idatualfase"=>$this->getidatualfase()
 		));
@@ -60,7 +59,6 @@ class Edital extends Model{
 		$this->setData($results[0]);
 
 	}
-
 
 	public function get($idedital){
 
@@ -70,7 +68,11 @@ class Edital extends Model{
 			"idedital"=>$idedital
 		));
 
-		$this->setData($results[0]);
+		if (is_null($results)) { 
+		} 
+		else {
+			$this->setData($results[0]); 
+		}
 
 	}
 
@@ -83,16 +85,13 @@ class Edital extends Model{
 			":idedital"=>$this->getidedital()
 		));
 
-		//Apagar pdfs (Alterar para apagar todas)
-		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf";
-
-		if (file_exists($pfile)) {
-
-			unlink($pfile);
-
-		}
-
-
+//Apagar pdfs (Alterar para apagar todas)
+//		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf";
+//
+//		if (file_exists($pfile)) {
+//
+//			unlink($pfile);
+//		}
 	}
 
 
@@ -149,56 +148,7 @@ class Edital extends Model{
 
 	}
 
-// Checar se tem pdf
-	public function checkpdf()
-	{
-
-		if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf")) {
-
-			$filename = "Edital" . $this->getidedital() . ".pdf";
-
-		} else {
-
-			$filename = "Editalbase.pdf";
-
-		}
-
-		return $this->setdesfile($filename);
-
-	}
-
-//fazer upload do pdf
-	public function uploadPDF($file)
-	{
-
-		$extension = explode('.', $file['name']);
-
-		$extension = end($extension);
-
-		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf";
-
-		if ($extension === "pdf") {
-
-			if (move_uploaded_file($file['tmp_name'], $pfile)) {
-
-			} else {
-
-				throw new Exception("Não foi possível realizar o upload");
-
-			}
-
-		} else {
-
-			throw new Exception("Tipo de arquivo não permitido");
-
-		}
-
-	}
-
-
 
 }
 
-
-
- ?>
+?>
