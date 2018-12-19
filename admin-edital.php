@@ -23,6 +23,44 @@ $app->get("/admin/edital/files", function (){
 	
 });
 
+$app->get("/admin/edital_files/add/:idedital", function ($idedital){
+
+	User::verifylogin();
+
+	$page = new PageAdmin();
+
+	$edital = new Edital();
+
+	$edital->get((int)$idedital);
+
+	$page->setTpl("edital-filesupload", [
+		"edital"=>$edital->getValues()
+	]);
+	
+});
+
+$app->post("/admin/edital_files/add/:idedital", function ($idedital){
+
+	User::verifylogin();
+
+	$docfiles = new Docfiles();
+
+	$docfiles->setData($_POST);
+
+	if ($_FILES["fileUpload"]["name"] !== "")
+	{
+
+		$docfiles->uploadPDF($_FILES["fileUpload"], $idedital);
+	
+	}
+
+	$docfiles->save($idedital);
+
+	header("Location: /admin/edital_files/:idedital");
+	exit;
+	
+});
+
 $app->get("/admin/edital_files/:idedital", function ($idedital){
 
 	User::verifylogin();
@@ -41,44 +79,6 @@ $app->get("/admin/edital_files/:idedital", function ($idedital){
 	]);
 	
 });
-
-$app->get("/admin/edital_files/:idedital/add", function ($idedital){
-
-	User::verifylogin();
-
-	$page = new PageAdmin();
-
-	$edital = new Edital();
-
-	$edital->get((int)$idedital);
-
-	$page->setTpl("edital-filesupload", 
-		"edital"=>$edital=>getValues()
-	);
-	
-});
-
-$app->post("/admin/edital_files/:idedital/add", function (){
-
-	User::verifylogin();
-
-	$docfiles = new Docfiles();
-
-	$docfiles->setData($_POST);
-
-	if ($_FILES["fileUpload"]["name"] !== "")
-	{
-
-		$edital->uploadPDF($_FILES["fileUpload"], $idedital);
-	}
-
-	$edital->save($idedital);
-
-	header("Location: /admin/edital_files/:idedital");
-	exit;
-	
-});
-
 
 //End Rotas Edital Files - Admin
 

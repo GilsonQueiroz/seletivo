@@ -7,7 +7,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active"><a href="/admin/edital/files">Edital <?php echo htmlspecialchars( $edital["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></li>
+    <li class="active"><a href="/admin/edital/files">Edital - Arquivo</a></li>
   </ol>
 </section>
 
@@ -19,7 +19,7 @@
       <div class="box box-primary">
             
             <div class="box-header">
-              <a href="#" class="btn btn-success">Incluir Arquivo</a>
+              <a href="/admin/edital_files/add/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-success">Incluir Arquivo</a>
             </div>
 
             <div class="box-body no-padding">
@@ -34,18 +34,16 @@
                 </thead>
                 <tbody>
                   <?php $counter1=-1;  if( isset($docfiles) && ( is_array($docfiles) || $docfiles instanceof Traversable ) && sizeof($docfiles) ) foreach( $docfiles as $key1 => $value1 ){ $counter1++; ?>
-
                   <tr>
                     <td><?php echo htmlspecialchars( $value1["idfile"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td><?php echo htmlspecialchars( $value1["destitle"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                     <td><?php echo htmlspecialchars( $value1["desnamefile"], ENT_COMPAT, 'UTF-8', FALSE ); ?>.pdf</td>
                     <td>
-                      <a href="/admin/users/<?php echo htmlspecialchars( $value1["iduser"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                      <a href="/admin/users/<?php echo htmlspecialchars( $value1["iduser"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                      <a href="/admin/edital_files/<?php echo htmlspecialchars( $value1["idfile"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                      <a href="/admin/edital_files/<?php echo htmlspecialchars( $value1["idfile"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                     </td>
                   </tr>
                   <?php } ?>
-
                 </tbody>
               </table>
             </div>

@@ -1,14 +1,14 @@
-<!-- Content Wrapper. Contains page content -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Adicionar Arquivo - Edital {$edital.descodedital}: {$edital.desedital} 
+    Adicionar Arquivo - Edital <?php echo htmlspecialchars( $edital["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>: <?php echo htmlspecialchars( $edital["desedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?> 
   </h1>
   <ol class="breadcrumb">
     <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="/admin/edital/files">Edital - Arquivos</a></li>
-    <li><a href="/admin/edital_files/{$edital.idedital}">Edital {$edital.descodedital}</a></li>
+    <li><a href="/admin/edital_files/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Edital <?php echo htmlspecialchars( $edital["descodedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></li>
     <li class="active"><a href="#">Inclusão</a></li>
   </ol>
 </section>
@@ -24,7 +24,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" action="/admin/edital_files/add/{$edital.idedital}" method="post" enctype="multipart/form-data">
+        <form role="form" action="/admin/edital_files/add/<?php echo htmlspecialchars( $edital["idedital"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post" enctype="multipart/form-data">
           <div class="box-body">
             <div class="form-group">
               <label for="destitle">Título do Arquivo</label>

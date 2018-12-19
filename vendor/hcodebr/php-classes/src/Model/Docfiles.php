@@ -22,13 +22,15 @@ class Docfiles extends Model{
     public function save($idedital)
 	{
 
+		$namefile = $idedital . "_" . $this->getdestitle() . ".pdf";
+
 		$sql = new SqL();
 
 		$results = $sql->select("CALL sp_docfiles_save(:idfile, :idedital, :destitle, :desnamefile)", array(
 			":idfile"=>$this->getidfile(),
 			":idedital"=>$idedital,
 			":destitle"=>$this->getdestitle(),
-			":desnamefile"=>$this->getdesnamefile()
+			":desnamefile"=>$namefile
 		));
 
 		$this->setData($results[0]);
@@ -59,7 +61,7 @@ class Docfiles extends Model{
 
 	}
 
-// Checar se tem pdf
+/* Checar se tem pdf
 	public function checkpdf()
 	{
 
@@ -75,7 +77,7 @@ class Docfiles extends Model{
 
 		return $this->setdesfile($filename);
 
-	}
+	}*/
 
 //fazer upload do pdf
 	public function uploadPDF($file, $idedital)
@@ -85,7 +87,9 @@ class Docfiles extends Model{
 
 		$extension = end($extension);
 
-		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . $this->getdesnamefile() . $idedital . ".pdf";
+		$namefile = $idedital . "_" . $this->getdestitle() . ".pdf";
+
+		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . $namefile;
 
 		if ($extension === "pdf") {
 
@@ -99,7 +103,7 @@ class Docfiles extends Model{
 
 		} else {
 
-			throw new Exception("Tipo de arquivo não permitido");
+			throw new Exception("Tipo de arquivo não suportado");
 
 		}
 
