@@ -74,5 +74,21 @@ $app->get('/editalaberto_:idcargo', function($idcargo) {
 
 //End Rota edital - site
 
+//Página de detalhes do edital
+$app->get("/detalhar_:desurl", function($desurl){
+
+	$edital = new Edital();
+
+	$edital->getFromURL($desurl);
+
+	$page = new Page();
+
+	$page->setTpl("editaldetail", [
+		"edital"=>$edital->getValues(),
+		"cargos"=>$edital->getCargosList(),
+		"files"=>$edital->getFiles()
+	]);
+
+})
 
  ?>

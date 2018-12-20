@@ -9,6 +9,7 @@ use \Hcode\Model\Docfiles;
 
 //Rotas Edital Files - Admin
 
+//Lista todos os editais
 $app->get("/admin/edital/files", function (){
 
 	User::verifylogin();
@@ -23,6 +24,7 @@ $app->get("/admin/edital/files", function (){
 	
 });
 
+//Ao apertar o botão incluir chama o formulário
 $app->get("/admin/edital_files/add/:idedital", function ($idedital){
 
 	User::verifylogin();
@@ -39,6 +41,7 @@ $app->get("/admin/edital_files/add/:idedital", function ($idedital){
 	
 });
 
+//Retorno com a confirmação de inclusão - falta definir para não gravar duplicado
 $app->post("/admin/edital_files/add/:idedital", function ($idedital){
 
 	User::verifylogin();
@@ -56,11 +59,12 @@ $app->post("/admin/edital_files/add/:idedital", function ($idedital){
 
 	$docfiles->save($idedital);
 
-	header("Location: /admin/edital_files/:idedital");
+	header("Location: /admin/edital_files/".$idedital);
 	exit;
 	
 });
 
+//Lista arquivos que foram anexados ao edital
 $app->get("/admin/edital_files/:idedital", function ($idedital){
 
 	User::verifylogin();
@@ -77,6 +81,22 @@ $app->get("/admin/edital_files/:idedital", function ($idedital){
 		"edital"=>$edital->getValues(),
 		"docfiles"=>$docfiles
 	]);
+	
+});
+
+//Apagar arquivos
+$app->get("/admin/edital_files/:idedital/delete/:idfile", function ($idedital, $idfile){
+
+	User::verifylogin();
+
+	$docfiles = new Docfiles();
+
+	$docfiles->get((int)$idfile);
+
+	$docfiles->delete();
+
+	header("Location: /admin/edital_files/".$idedital);
+	exit;
 	
 });
 
@@ -213,12 +233,6 @@ $app->post("/admin/edital/create", function (){
 
 	$edital->setData($_POST);
 
-	if ($_FILES["fileUpload"]["name"] !== "")
-	{
-
-		$edital->uploadPDF($_FILES["fileUpload"]);
-	}
-
 	$edital->save();
 
 	header("Location: /admin/edital");
@@ -266,12 +280,6 @@ $app->post("/admin/edital/:idedital", function ($idedital){
 	$edital->get((int)$idedital);
 
 	$edital->setData($_POST);
-
-	if ($_FILES["fileUpload"]["name"] !== "")
-	{
-
-		$edital->uploadPDF($_FILES["fileUpload"]);
-	}
 
 	$edital->save();
 

@@ -2,11 +2,11 @@
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>Editais {$fase}</title></head>
+		<head><title>Edital {$edital.descodedital}: {$edital.desedital}</title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<span>Editais {$fase}</span>
+					<span>Edital {$edital.descodedital}</span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
 
@@ -15,42 +15,37 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais {$fase}</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Edital {$edital.descodedital}: {$edital.desedital}</h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
 								<div align="left">
-									{loop="$edital"}
 									<div class="box">
 										<div class="clearfix"></div>
-										<h3 align="left"><i><b>Edital {$value.descodedital}</b></i></h3>
-										<h4 align="left"><i><b>{$value.desedital} - </b></i></h3>
-										<br>
-										<h6>{$value.desfase} em {$value.dtregister}</h6>
+										<h6>{$edital.desfase} em {$edital.dtregister}</h6>
 										<div style="clear:both"></div>
 										<div style="text-align:justify; padding-top:15px">
 											<div>
-												{$value.desresumo}
+												{$edital.deslongo}
 											</div>
-											<div>&nbsp;</div>
+											<div>&nbsp;</div><hr>
 											<div>
 												Cargos:
 											</div>
 											<div>&nbsp;</div>
-											<br/>
-											<div class="btn">
-												<a href="/detalhar_{$value.desurl}"> Visualizar <i class="fa fa fa-eye m110"></i></a>
-											</div>
+											{loop="$cargos"}
+												<li>{$value.descargo} (Vagas: {$value.nrvacancy})</li>
+											{/loop}
+											<div>&nbsp;</div>
 
-												<div class="btn">
-													<a href="#"> Participar <i class="fa fa fa-arrow-right m110"></i></a>
-												</div>
+											<br/><br/>
+											<div class="btn">
+												<a href="#"> Participar <i class="fa fa fa-arrow-right m110"></i></a>
+											</div>
 
 										</div>
 									</div>
 									<br/>
-									{/loop}
-
 
 									<!-- abas -->
 
@@ -63,9 +58,11 @@
 							</div>	
 							<div class="aside col-2-3-1-dmin">
 								<div class="box-wrap">
-									<div class="tta">Procurar por Cargo</div>
+									<div class="tta">Arquivos</div>
 									<div class="ttb"></div>
-							    	{include="cargo-menu"}
+									{loop="$files"}
+							    	<li><a href="/res/site/pdf/{$value.desnamefile}"><i class="fa fa-file-pdf-o"></i> {$value.destitle}</a></li><hr>
+									{/loop}
 								</div>
 								<div class="clear"></div>
 								<br>

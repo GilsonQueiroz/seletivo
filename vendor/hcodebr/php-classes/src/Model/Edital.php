@@ -47,13 +47,14 @@ class Edital extends Model{
 
 		$sql = new SqL();
 
-		$results = $sql->select("CALL sp_editais_save(:idedital, :descodedital, :desedital, :desurl, :desresumo, :idatualfase)", array(
+		$results = $sql->select("CALL sp_editais_save(:idedital, :descodedital, :desedital, :desurl, :desresumo, :idatualfase, :deslongo)", array(
 			":idedital"=>$this->getidedital(),
 			":descodedital"=>$this->getdescodedital(),
 			":desedital"=>$this->getdesedital(),
 			":desurl"=>$this->getdesurl(),
 			":desresumo"=>$this->getdesresumo(),
-			":idatualfase"=>$this->getidatualfase()
+			":idatualfase"=>$this->getidatualfase(),
+			":deslongo"=>$this->getdeslongo()
 		));
 
 		$this->setData($results[0]);
@@ -85,13 +86,6 @@ class Edital extends Model{
 			":idedital"=>$this->getidedital()
 		));
 
-//Apagar pdfs (Alterar para apagar todas)
-//		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . "Edital" . $this->getidedital() . ".pdf";
-//
-//		if (file_exists($pfile)) {
-//
-//			unlink($pfile);
-//		}
 	}
 
 
@@ -148,6 +142,49 @@ class Edital extends Model{
 
 	}
 
+	//pegar informação da url
+	public function getFromURL($desurl)
+	{
+
+		$sql = new Sql();
+
+		$rows = $sql->select("SELECT * FROM tb_editais INNER JOIN tb_fases ON tb_fases.idfase = tb_editais.idatualfase  WHERE desurl = :desurl", [
+			':desurl'=>$desurl
+		]);
+
+		$this->setData($rows[0]);
+
+	}
+
+
+	//Exibir cargos que fazem parte do edital
+	public function getCargosList()
+	{
+
+		$sql = new Sql();
+
+		return $sql->select("
+			SELECT * FROM tb_cargos a
+		 	INNER JOIN tb_vacancies b 
+		 	ON a.idcargo = b.idcargo 
+		 	WHERE b.idedital = :idedital", [
+			':idedital'=>$this->getidedital()
+		]);
+
+	}
+
+	//Exibir cargos que fazem parte do edital
+	public function getFiles()
+	{
+
+		$sql = new Sql();
+
+		return $sql->select("
+			SELECT * FROM tb_files WHERE idedital = :idedital ORDER BY dtregister", [
+			':idedital'=>$this->getidedital()
+		]);
+
+	}
 
 }
 

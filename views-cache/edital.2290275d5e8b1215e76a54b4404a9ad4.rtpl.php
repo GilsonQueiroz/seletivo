@@ -39,7 +39,7 @@
 											<div>&nbsp;</div>
 											<br/>
 											<div class="btn">
-												<a href="#"> Visualizar <i class="fa fa fa-eye m110"></i></a>
+												<a href="/detalhar_<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"> Visualizar <i class="fa fa fa-eye m110"></i></a>
 											</div>
 
 												<div class="btn">

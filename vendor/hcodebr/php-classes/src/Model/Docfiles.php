@@ -13,7 +13,7 @@ class Docfiles extends Model{
 
 		$sql = new SqL();
 
-		return $sql->select("SELECT * FROM tb_files ORDER BY destitle WHERE idedital = :idedital", array(
+		return $sql->select("SELECT * FROM tb_files WHERE idedital = :idedital ORDER BY dtregister", array(
 			":idedital"=>$idedital
 		));
 	}
@@ -58,6 +58,14 @@ class Docfiles extends Model{
 		$sql->query("DELETE FROM tb_files WHERE idfile = :idfile", array(
 			":idfile"=>$this->getidfile()
 		));
+
+//Apagar pdfs (Alterar para apagar todas)
+		$pfile = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "site" . DIRECTORY_SEPARATOR . "pdf" . DIRECTORY_SEPARATOR . $this->getdesnamefile();
+
+		if (file_exists($pfile)) {
+
+			unlink($pfile);
+		}
 
 	}
 
