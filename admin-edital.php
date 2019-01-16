@@ -171,7 +171,13 @@ $app->post("/admin/edital/:idedital/vagas/:idcargo/add", function ($idedital, $i
 
 	$vagas = $_POST["vacancy"];
 
-	$edital->addCargo($cargo, $vagas);
+	$cadreserva = $_POST["cadreserva"];
+
+	$analise = $_POST["analise"];
+
+	$enterview = $_POST["enterview"];
+
+	$edital->addCargo($cargo, $vagas, $cadreserva, $analise, $enterview);
 
 	header("Location: /admin/edital/".$idedital."/vagas");
 	exit;

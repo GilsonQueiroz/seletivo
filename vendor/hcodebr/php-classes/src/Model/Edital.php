@@ -117,15 +117,18 @@ class Edital extends Model{
 
 	}
 
-	public function addCargo(Cargo $cargo, $vagas)
+	public function addCargo(Cargo $cargo, $vagas, $cadreserva, $analise, $enterview)
 	{
 
 		$sql = new SqL();
 
-		$sql->query("INSERT INTO tb_vacancies (idedital, idcargo, nrvacancy) VALUES(:idedital, :idcargo, :nrvacancy)", array(
+		$sql->query("INSERT INTO tb_vacancies (idedital, idcargo, nrvacancy, nrcadreserva, nranalise, nrenterview) VALUES(:idedital, :idcargo, :nrvacancy, :nrcadreserva, :nranalise, :nrenterview)", array(
 			":idedital"=>$this->getidedital(),
 			":idcargo"=>$cargo->getidcargo(),
-			":nrvacancy"=>$vagas
+			":nrvacancy"=>$vagas,
+			":nrcadreserva"=>$cadreserva,
+			":nranalise"=>$analise,
+			":nrenterview"=>$enterview
 		));
 
 	}

@@ -3,6 +3,7 @@
 use \Hcode\Page;
 use \Hcode\Model\Cargo;
 use \Hcode\Model\Edital;
+use \Hcode\Model\Vacancy;
 
 //Rota edital - site
 
@@ -89,6 +90,23 @@ $app->get("/detalhar_:desurl", function($desurl){
 		"files"=>$edital->getFiles()
 	]);
 
-})
+});
+// fim página de detalhes do edital
+
+// Participar
+$app->get("/participa_:desurl", function($desurl){
+
+	$edital = new Edital();
+
+	$edital->getFromURL($desurl);
+
+	$page = new Page();
+
+	$page->setTpl("participa", [
+		"edital"=>$edital->getValues(),
+		"cargos"=>$edital->getCargosList()
+	]);
+
+});
 
  ?>
