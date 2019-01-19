@@ -2,11 +2,11 @@
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>Editais {$fase}</title></head>
+		<head><title>Cargo: {$cargo.descargo}</title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<span>Editais {$fase}</span>
+					<span>{$cargo.descargo}</span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
 
@@ -15,40 +15,43 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais {$fase}</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">{$cargo.descargo}</h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
 								<div align="left">
-									{loop="$edital"}
 									<div class="box">
-										<div class="clearfix"></div>
-										<h3 align="left"><i><b>Edital {$value.descodedital}</b></i></h3>
-										<h4 align="left"><i><b>{$value.desedital} - </b></i></h3>
-										<br>
-										<h6>{$value.desfase} em {$value.dtregister}</h6>
 										<div style="clear:both"></div>
 										<div style="text-align:justify; padding-top:15px">
-											<div>
-												{$value.desresumo}
-											</div>
 											<div>&nbsp;</div>
 											<div>
-												Cargos:
+												<b>Requerimentos:</b>
 											</div>
 											<div>
-												{$value.descargolist}
+												{$cargo.desrequeriment}
 											</div>
-											<div>&nbsp;</div>
-											<br/>
+											<div>&nbsp;</div><hr>
+											<div>
+												<b>Atividades:</b>
+											</div>
+											<div>
+												{$cargo.desactivity}
+											</div>
+											<div>&nbsp;</div><hr>
+											<div>
+												<b>Remuneração e Carga horária:</b>
+											</div>
+											<div>
+												R$ {function="formatSalary($cargo.desbasesalary)"} de vencimento base (Dez/2018) / {$cargo.desweekhours} horas semanais
+											</div>
+											<br/><br/>
 											<div class="btn">
-												<a href="/detalhar_{$value.desurl}"> Visualizar <i class="fa fa fa-eye m110"></i></a>
+												<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 											</div>
+
 										</div>
 									</div>
 									<br/>
-									{/loop}
-
 
 									<!-- abas -->
 
@@ -60,14 +63,6 @@
 								</div>	
 							</div>	
 							<div class="aside col-2-3-1-dmin">
-								<div class="box-wrap">
-									<div class="tta">Procurar por Cargo</div>
-									<div class="ttb"></div>
-							    	{include="cargo-menu"}
-								</div>
-								<div class="clear"></div>
-								<br>
-							</div>
 							<div class="clear"></div>
 						</div>
 					</div>	

@@ -1,12 +1,12 @@
-<div class="container">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><div class="container">
 	<div class="bg-pag">	
 		<div class="content box">
 	
-		<head><title>Editais {$fase}</title></head>
+		<head><title>Cargo: <?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></title></head>
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<span>Editais {$fase}</span>
+					<span><?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
 
@@ -15,40 +15,43 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais {$fase}</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;"><?php echo htmlspecialchars( $cargo["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
 								<div align="left">
-									{loop="$edital"}
 									<div class="box">
-										<div class="clearfix"></div>
-										<h3 align="left"><i><b>Edital {$value.descodedital}</b></i></h3>
-										<h4 align="left"><i><b>{$value.desedital} - </b></i></h3>
-										<br>
-										<h6>{$value.desfase} em {$value.dtregister}</h6>
 										<div style="clear:both"></div>
 										<div style="text-align:justify; padding-top:15px">
-											<div>
-												{$value.desresumo}
-											</div>
 											<div>&nbsp;</div>
 											<div>
-												Cargos:
+												<b>Requerimentos:</b>
 											</div>
 											<div>
-												{$value.descargolist}
+												<?php echo htmlspecialchars( $cargo["desrequeriment"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
 											</div>
-											<div>&nbsp;</div>
-											<br/>
+											<div>&nbsp;</div><hr>
+											<div>
+												<b>Atividades:</b>
+											</div>
+											<div>
+												<?php echo htmlspecialchars( $cargo["desactivity"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
+											</div>
+											<div>&nbsp;</div><hr>
+											<div>
+												<b>Remuneração e Carga horária:</b>
+											</div>
+											<div>
+												R$ <?php echo formatSalary($cargo["desbasesalary"]); ?> de vencimento base (Dez/2018) / <?php echo htmlspecialchars( $cargo["desweekhours"], ENT_COMPAT, 'UTF-8', FALSE ); ?> horas semanais
+											</div>
+											<br/><br/>
 											<div class="btn">
-												<a href="/detalhar_{$value.desurl}"> Visualizar <i class="fa fa fa-eye m110"></i></a>
+												<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 											</div>
+
 										</div>
 									</div>
 									<br/>
-									{/loop}
-
 
 									<!-- abas -->
 
@@ -60,14 +63,6 @@
 								</div>	
 							</div>	
 							<div class="aside col-2-3-1-dmin">
-								<div class="box-wrap">
-									<div class="tta">Procurar por Cargo</div>
-									<div class="ttb"></div>
-							    	{include="cargo-menu"}
-								</div>
-								<div class="clear"></div>
-								<br>
-							</div>
 							<div class="clear"></div>
 						</div>
 					</div>	

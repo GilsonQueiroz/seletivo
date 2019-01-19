@@ -6,7 +6,7 @@
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<a class=" mr5" href="/editalaberto">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?></a><i class="fa fa-angle-double-right mr5"></i>
+					<a class=" mr5" href="/editalaberto">Editais</a><i class="fa fa-angle-double-right mr5"></i>
 					<span><?php echo htmlspecialchars( $nomeCargo, ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
@@ -16,7 +16,7 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais <?php echo htmlspecialchars( $fase, ENT_COMPAT, 'UTF-8', FALSE ); ?> - <?php echo htmlspecialchars( $nomeCargo, ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais - <?php echo htmlspecialchars( $nomeCargo, ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
@@ -37,8 +37,14 @@
 											<div>
 												Cargos:
 											</div>
+											<div>
+												<?php echo htmlspecialchars( $value1["descargolist"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
+											</div>
 											<div>&nbsp;</div>
-											<br/><br/>
+											<br/>
+											<div class="btn">
+												<a href="/detalhar_<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"> Visualizar <i class="fa fa fa-eye m110"></i></a>
+											</div>
 										</div>
 									</div>
 									<?php } ?>

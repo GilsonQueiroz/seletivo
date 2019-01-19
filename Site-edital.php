@@ -13,23 +13,35 @@ $app->get('/editais_abertos', function() {
 
 	$page = new Page();
 
+	if (empty($edital)) {
+
+	$page->setTpl("editalabertovazio", [
+		"edital"=>$edital,
+		"fase"=>"abertos",
+		"button"=>" Visualizar "		
+	]);
+
+	} else {
+
 	$page->setTpl("edital", [
 		"edital"=>$edital,
-		"fase"=>"Abertos",
-		"button"=>" Participar "
+		"fase"=>"abertos",
+		"button"=>" Visualizar "		
 	]);
+
+	}
 
 });
 
-$app->get('/editais_andamento', function() {
+$app->get('/editais_publicados', function() {
     
-	$edital = Edital::listAndamento();
+	$edital = Edital::listAll();
 
 	$page = new Page();
 
 	$page->setTpl("edital", [
 		"edital"=>$edital,
-		"fase"=>"Em Andamento",
+		"fase"=>"publicados",
 		"button"=>" Visualizar "
 	]);
 
@@ -41,34 +53,58 @@ $app->get('/editais_encerrados', function() {
 
 	$page = new Page();
 
+	if (empty($edital)) {
+
+	$page->setTpl("editalencerradovazio", [
+		"edital"=>$edital,
+		"fase"=>"abertos",
+		"button"=>" Visualizar "		
+	]);
+
+	} else {
+
 	$page->setTpl("edital", [
 		"edital"=>$edital,
-		"fase"=>"Encerrados",
-		"button"=>" Ver Resultado "
+		"fase"=>"encerrados",
+		"button"=>" Visualizar "
 	]);
+
+	}
 
 });
 
 // End Rota Edital - Site
+
 // Rotas Edital / Cargo - Site
 
-$app->get('/editalaberto_:idcargo', function($idcargo) {
+$app->get('/editalpublicado_:idcargo', function($idcargo) {
     
 	$cargo = new Cargo();
 
 	$cargo->get((int)$idcargo);
 
-	$cargosEdital = Cargo::getCargosEdital($idcargo, '3');
+	$cargosEdital = Cargo::getCargosEdital($idcargo);
 
 	$page = new Page();
-
-//	var_dump($cargo);
-//	exit;
 
 	$page->setTpl("editalcargo", [
 		"nomeCargo"=>$cargo->getdescargo(),
 		"editais"=>$cargosEdital,
 		"fase"=>"Abertos"
+	]);
+
+});
+
+$app->get('/cargo_:idcargo', function($idcargo){
+
+	$cargo = new Cargo();
+
+	$cargo->get((int)$idcargo);
+
+	$page = new Page();
+
+	$page->setTpl("cargo", [
+		"cargo"=>$cargo->getValues()
 	]);
 
 });

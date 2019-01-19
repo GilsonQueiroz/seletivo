@@ -40,7 +40,25 @@
               <label for="vacancy">Quantidade de vagas</label>
               <input type="number" step=1 class="form-control" id="vacancy" name="vacancy" value="1">
             </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label for="cadreserva">Quantidade Cadastro de Reserva</label>
+              <input type="number" step=1 class="form-control" id="cadreserva" name="cadreserva" value="1">
+            </div>
           </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label for="analise">Qtd para Analise</label>
+              <input type="number" step=1 class="form-control" id="analise" name="analise" value="1">
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="form-group">
+              <label for="enterview">Qtd para Entrevista</label>
+              <input type="number" step=1 class="form-control" id="enterview" name="enterview" value="1">
+            </div>
+          </div>
+
           <!-- /.box-body -->
           <div class="box-footer">
             <button type="submit" class="btn btn-success">Confirmar</button>

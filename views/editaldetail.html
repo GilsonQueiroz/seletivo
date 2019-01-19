@@ -34,7 +34,7 @@
 											</div>
 											<div>&nbsp;</div>
 											{loop="$cargos"}
-												<li>{$value.descargo} (Vagas: {$value.nrvacancy}, CR: {$value.nrcadreserva})</li>
+												<li><ins><a href="/cargo_{$value.idcargo}">{$value.descargo}</a></ins> (Vagas: {$value.nrvacancy}, CR: {$value.nrcadreserva})</li>
 											{/loop}
 											<div>&nbsp;</div>
 

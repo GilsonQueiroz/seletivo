@@ -36,16 +36,14 @@
 											<div>
 												Cargos:
 											</div>
+											<div>
+												<?php echo htmlspecialchars( $value1["descargolist"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
+											</div>
 											<div>&nbsp;</div>
 											<br/>
 											<div class="btn">
 												<a href="/detalhar_<?php echo htmlspecialchars( $value1["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"> Visualizar <i class="fa fa fa-eye m110"></i></a>
 											</div>
-
-												<div class="btn">
-													<a href="#"> Participar <i class="fa fa fa-arrow-right m110"></i></a>
-												</div>
-
 										</div>
 									</div>
 									<br/>

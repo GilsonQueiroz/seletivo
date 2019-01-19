@@ -13,19 +13,11 @@ class Edital extends Model{
 
 		$sql = new SqL();
 
-		return $sql->select("SELECT * FROM tb_editais a INNER JOIN tb_fases b ON a.idatualfase = b.idfase ORDER BY descodedital");
+		return $sql->select("SELECT * FROM tb_editais a INNER JOIN tb_fases b ON a.idatualfase = b.idfase WHERE a.idatualfase > 2 ORDER BY descodedital");
 
 	}
 
 	public static function listAberto()
-	{
-
-		$sql = new SqL();
-
-		return $sql->select("SELECT * FROM tb_editais a INNER JOIN tb_fases b ON a.idatualfase = b.idfase WHERE a.idatualfase = 3 ORDER BY descodedital");
-	}
-
-	public static function listAndamento()
 	{
 
 		$sql = new SqL();
@@ -131,6 +123,42 @@ class Edital extends Model{
 			":nrenterview"=>$enterview
 		));
 
+		Edital::updateVacancy($this->getidedital());
+
+	}
+
+	public static function listVagas($idedital)
+	{
+
+		$sql = new SqL();
+
+		return $sql->select("SELECT * FROM tb_vacancies a 
+							INNER JOIN tb_cargos b ON a.idcargo = b.idcargo 
+							WHERE idedital = :idedital", 
+					array( "idedital"=>$idedital
+		));
+
+	}
+
+	public function updateVacancy($idedital)
+	{
+
+		$cargos = Edital::listVagas($idedital);
+
+		$listcargos = '';
+
+		//comando html a se  
+		foreach ($cargos as $row) {
+			$listcargos = $listcargos . $row['descargo'].' (Vagas: '.$row['nrvacancy'].' CR: '. $row['nrcadreserva']. '); ';
+		}
+
+		$sql = new SqL();
+
+		$sql->query("UPDATE tb_editais SET descargolist = :listcargos WHERE idedital = :idedital", array(
+			":idedital"=>$idedital,
+			":listcargos"=>$listcargos
+		));
+
 	}
 
     public function removeCargo(Cargo $cargo)
@@ -142,6 +170,8 @@ class Edital extends Model{
 			":idedital"=>$this->getidedital(),
 			":idcargo"=>$cargo->getidcargo()
 		));
+
+		Edital::updateVacancy($this->getidedital());
 
 	}
 
@@ -176,7 +206,7 @@ class Edital extends Model{
 
 	}
 
-	//Exibir cargos que fazem parte do edital
+	//Exibir arquivos que fazem parte do edital
 	public function getFiles()
 	{
 

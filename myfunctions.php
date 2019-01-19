@@ -1,9 +1,9 @@
 <?php 
 
-function formatSalary($baseSalary)
+function formatSalary(float $baseSalary)
 {
 
-	return number_format((float)$baseSalary, 2, ",", ".");
+	return number_format($baseSalary, 2, ",", ".");
 
 }
 

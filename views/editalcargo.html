@@ -6,7 +6,7 @@
 			<div>
 				<div class="navigation">
 					<a class=" mr5" href="/">Home</a><i class="fa fa-angle-double-right mr5"></i>
-					<a class=" mr5" href="/editalaberto">Editais {$fase}</a><i class="fa fa-angle-double-right mr5"></i>
+					<a class=" mr5" href="/editalaberto">Editais</a><i class="fa fa-angle-double-right mr5"></i>
 					<span>{$nomeCargo}</span>
 					<a class="fright" href="javascript:history.go(-1)"><i class="btn fa fa-angle-double-left"></i> Voltar</a>
 				</div>
@@ -16,7 +16,7 @@
 						<div class="clear"></div>
 						<hr class="hr40"/>
 
-						<h1 align="left" style="font-size:250%; font-weight:700;">Editais {$fase} - {$nomeCargo}</h1>
+						<h1 align="left" style="font-size:250%; font-weight:700;">Editais - {$nomeCargo}</h1>
 						<br>
 						<div>
 							<div class="col-2-3-2-emax">
@@ -37,16 +37,14 @@
 											<div>
 												Cargos:
 											</div>
+											<div>
+												{$value.descargolist}
+											</div>
 											<div>&nbsp;</div>
 											<br/>
 											<div class="btn">
 												<a href="/detalhar_{$value.desurl}"> Visualizar <i class="fa fa fa-eye m110"></i></a>
 											</div>
-
-												<div class="btn">
-													<a href="#"> Participar <i class="fa fa fa-arrow-right m110"></i></a>
-												</div>
-
 										</div>
 									</div>
 									{/loop}

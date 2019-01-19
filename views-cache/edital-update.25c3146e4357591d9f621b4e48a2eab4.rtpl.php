@@ -33,6 +33,10 @@
               <input type="text" class="form-control" id="desresumo" name="desresumo" placeholder="Digite um resumo do Edital" Value="<?php echo htmlspecialchars( $edital["desresumo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
             </div>
             <div class="form-group">
+              <label for="deslongo">Descrição do Edital</label>
+              <text" class="form-control" id="deslongo" name="deslongo" placeholder="Descrição do Edital" Value="<?php echo htmlspecialchars( $edital["deslongo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+            </div>
+            <div class="form-group">
               <label for="desurl">Url do Edital</label>
               <input type="text" class="form-control" id="desurl" name="desurl" placeholder="Digite uma url para a página de detalhe" Value="<?php echo htmlspecialchars( $edital["desurl"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">              
             </div>

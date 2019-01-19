@@ -34,7 +34,7 @@
 											</div>
 											<div>&nbsp;</div>
 											<?php $counter1=-1;  if( isset($cargos) && ( is_array($cargos) || $cargos instanceof Traversable ) && sizeof($cargos) ) foreach( $cargos as $key1 => $value1 ){ $counter1++; ?>
-												<li><?php echo htmlspecialchars( $value1["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?> (Vagas: <?php echo htmlspecialchars( $value1["nrvacancy"], ENT_COMPAT, 'UTF-8', FALSE ); ?>)</li>
+												<li><ins><a href="/cargo_<?php echo htmlspecialchars( $value1["idcargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["descargo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></ins> (Vagas: <?php echo htmlspecialchars( $value1["nrvacancy"], ENT_COMPAT, 'UTF-8', FALSE ); ?>, CR: <?php echo htmlspecialchars( $value1["nrcadreserva"], ENT_COMPAT, 'UTF-8', FALSE ); ?>)</li>
 											<?php } ?>
 											<div>&nbsp;</div>
 

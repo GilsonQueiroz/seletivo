@@ -160,19 +160,18 @@
 									</ul>
 							</li>
 							
-							<li><a href="#">SELEÇÕES</a> 
+							<li><a href="#">EDITAIS</a> 
 									<ul>
-										<li><a href="/editais_abertos"><i class="fa fa-caret-right mr5"></i>Abertas</a></li>
-										<li><a href="/editais_andamento"><i class="fa fa-caret-right mr5"></i>Em Andamento</a></li>
-										<li><a href="/editais_encerrados"><i class="fa fa-caret-right mr5"></i>Realizadas</a></li>
+										<li><a href="/editais_publicados"><i class="fa fa-caret-right mr5"></i>Todos</a></li>
+										<li><a href="/editais_abertos"><i class="fa fa-caret-right mr5"></i>Abertos</a></li>
+										<li><a href="/editais_encerrados"><i class="fa fa-caret-right mr5"></i>Encerrados</a></li>
 									</ul>
 							</li>
 							
 							<li><a href="#">CANDIDATO</a> 
 									<ul>
-										<li><a href="index.html"><i class="fa fa-caret-right mr5"></i>Minhas Informações</a></li>
+										<li><a href="index.html"><i class="fa fa-caret-right mr5"></i>Meus dados</a></li>
 										<li><a href="index.html"><i class="fa fa-caret-right mr5"></i>Minhas inscrições</a></li>
-										<li><a href="index.html"><i class="fa fa-caret-right mr5"></i>Meus Resultados</a></li>
 									</ul>
 							</li>
 							
